@@ -1,13 +1,11 @@
 import * as React from 'react';
 import merge from 'classnames';
-import Modal from 'reactstrap/lib/Modal';
-import ModalBody from 'reactstrap/lib/ModalBody';
 
 import { AnyFunction } from '../../types/common';
 import { InputChange } from '../../types/react';
 import { SendBtn } from '../../components/send_btn';
 import { PartItem } from '../../components/part-item';
-import { PartsModal } from '../../components/parts-modal';
+// import { PartsModal } from '../../components/parts-modal';
 import { HardcodedParts } from './hardcoded-data';
 import { Part, Props, State } from './types';
 import './styles.css';
@@ -193,15 +191,15 @@ export class CartridgeForm extends React.Component<Props, State> {
             )}
           </div>
         </div>
-        <Modal centered isOpen={modalIsOpen} toggle={this.toggleModal}>
-          <ModalBody>
-            {shownAvailableParts.map(
-              (part: Part): JSX.Element => (
-                <PartsModal key={part.code} {...part} onClick={this.onAddPartsClick(part)} />
-              ),
-            )}
-          </ModalBody>
-        </Modal>
+        {/*<Modal centered isOpen={modalIsOpen} toggle={this.toggleModal}>*/}
+          {/*<ModalBody>*/}
+            {/*{shownAvailableParts.map(*/}
+              {/*(part: Part): JSX.Element => (*/}
+                {/*<PartsModal key={part.code} {...part} onClick={this.onAddPartsClick(part)} />*/}
+              {/*),*/}
+            {/*)}*/}
+          {/*</ModalBody>*/}
+        {/*</Modal>*/}
       </div>
     );
   }

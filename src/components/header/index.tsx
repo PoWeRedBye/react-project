@@ -1,7 +1,14 @@
-import * as React from 'react';
+import React from 'react';
+import Button from '@material-ui/core/Button';
 
 export class Header extends React.Component {
-  public render() {
-    return null;
+  render() {
+    return (
+      <div>
+        <Button variant="contained" color="primary">
+          Hello World
+        </Button>
+      </div>
+    );
   }
 }

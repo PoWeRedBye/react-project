@@ -3,8 +3,9 @@ import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { RootRouter } from '../../routes/root';
+import { Header } from "../../components/header";
+// Import global styles
 import '../../styles/index.css';
-import './styles.css';
 
 export class RootContainer extends React.Component {
   // RENDER
@@ -13,6 +14,7 @@ export class RootContainer extends React.Component {
     return (
       <BrowserRouter>
         <>
+          <Header />
           <RootRouter />
         </>
       </BrowserRouter>

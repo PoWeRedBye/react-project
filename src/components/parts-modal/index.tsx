@@ -1,10 +1,9 @@
-import * as React from 'react';
-import Button from 'reactstrap/lib/Button';
+import React from 'react';
 
 import { Props, State } from './types';
 
 export class PartsModal extends React.Component<Props, State> {
-  public constructor(props: Props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       amount: props.amount || 1,
@@ -13,7 +12,7 @@ export class PartsModal extends React.Component<Props, State> {
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render() {
     const { name, code, visible, onClick } = this.props;
     const { amount } = this.state;
 
@@ -23,7 +22,6 @@ export class PartsModal extends React.Component<Props, State> {
           <span>{code}</span>
           <span>{name}</span>
           <span>{amount}</span>
-          <Button>pick</Button>
         </div>
       )
     );
