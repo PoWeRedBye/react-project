@@ -1,7 +1,5 @@
-export interface Props {
-  name?: string;
-}
+export interface Props {}
 
 export interface State {
-  data: any;
+  sideBarIsOpen: boolean;
 }
