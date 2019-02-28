@@ -4,8 +4,6 @@ import { Props, State } from './types';
 import { InputChange } from '../../types/react';
 import { SendBtn } from '../../components/send_btn';
 import { Axios } from '../../services/Axios';
-import { Burger } from '../../components/burger';
-import { Loader } from '../../components/loader';
 
 export class UserSignIn extends React.Component<Props, State> {
   public state: State = {
@@ -56,9 +54,7 @@ export class UserSignIn extends React.Component<Props, State> {
     const { login, password } = this.state;
     return (
       <div className="user_sign_in">
-        <Burger />
         <form className="coming-form">
-          <Loader />
           <h2 className="coming-form">Login screen</h2>
           <input className="form-control" placeholder="Login" value={login} onChange={this.onLoginChange} />
           <input
