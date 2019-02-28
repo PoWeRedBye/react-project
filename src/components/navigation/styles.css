@@ -1,0 +1,31 @@
+.nav-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.component-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19%;
+  min-height: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  padding: 15px 30px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px #2537f1 inset, 0 0 0 0 #97a2f1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+  transition: 0.15s ease-in-out;
+}
+/*'это когда я мышкой навожу'*/
+.component-btn:hover {
+  box-shadow: 0 0 10px 0 #8570f1 inset, 0 0 10px 4px #1283f1;
+  color: #0002f1;
+  text-decoration: none;
+}

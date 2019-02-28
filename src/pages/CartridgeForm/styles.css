@@ -1,0 +1,48 @@
+.cartridge-form-container {
+  display: flex;
+}
+.cartridge-form-container form {
+  flex: 1;
+  margin: 0 10px;
+}
+.cartridge-form-container .parts-container {
+  flex: 1;
+  padding: 25px;
+}
+.cartridge-form-container .parts-container .parts-list {
+  max-height: 250px;
+  overflow-y: scroll;
+}
+.cartridge-form-container .parts-container .parts-list.bordered {
+  border: 1px solid black;
+}
+.coming-form input[type='code'] {
+  margin-bottom: -1px;
+  margin-top: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.coming-form input[type='name'] {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.coming-form input[type='amount'] {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.coming-form input[type='invoice'] {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.coming-form input[type='date'] {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
