@@ -1,37 +1,30 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import image from '../../../icons/creative.png';
-
 import styles from './SideBarNavigation.module.scss';
-import {Props, State} from './types'
+import { Props } from './types';
 
-export class SideBarNavigation extends React.Component<Props, State> {
-  state: State = {
-    className: "items"
-  };
-
-  public componentDidUpdate(prevProps: Props, prevState: State) {
-    if (this.props.isOpen) {
-      return(this.setState(() => ({className: "items open_items"})));
-    } else {
-      return(this.setState(() => ({className: "items"})));
-    }
+export class SideBarNavigation extends React.Component<Props> {
+  getItemClassName = () => {
+    return classNames('items', { open_items: this.props.isOpen });
   };
 
   render() {
-    const {className} = this.state;
-    return <div className={styles.container}>
-      <div>
-        <div className={className}>
-          <img src={image}/>
-          <a> Some Text </a>
+    return (
+      <div className={styles.container}>
+        <div>
+          <div className={this.getItemClassName()}>
+            <img src={image} />
+            <a> Some Text </a>
+          </div>
+          <div className={this.getItemClassName()}>
+            <img src={image} />
+            <a> Some Other Text </a>
+          </div>
         </div>
-        <div className={className}>
-          <img src={image}/>
-          <a> Some Other Text </a>
-        </div>
+        <div>auth</div>
       </div>
-      <div>auth</div>
-    </div>
+    );
   }
 }

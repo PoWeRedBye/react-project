@@ -11,7 +11,7 @@ export class Header extends React.Component<Props> {
     return (
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
+          <IconButton color="inherit" aria-label="Menu" onClick={this.props.onBurgerClick}>
             <MenuIcon />
           </IconButton>
         </Toolbar>
