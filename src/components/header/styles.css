@@ -1,0 +1,14 @@
+.style {
+  justify-content: end;
+  flex: auto;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.image {
+    max-width: 30px;
+    max-height: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+
