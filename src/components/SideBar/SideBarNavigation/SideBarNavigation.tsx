@@ -10,7 +10,7 @@ export class SideBarNavigation extends React.Component<Props, State> {
     className: "items"
   };
 
-  openNav = (props: Props) => {
+  public componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.props.isOpen) {
       return(this.setState(() => ({className: "items open_items"})));
     } else {

@@ -16,8 +16,10 @@ export class RootContainer extends React.Component<Props, State> {
   };
 
   onSideBarStateToggle = () => {
+    console.log(this.state.sideBarIsOpen);
+    console.log("+_+_+_+_".repeat(20));
     this.setState((prevState: State) => ({ sideBarIsOpen: !prevState.sideBarIsOpen }));
-
+    console.log(this.state.sideBarIsOpen);
   };
 
   // RENDER
