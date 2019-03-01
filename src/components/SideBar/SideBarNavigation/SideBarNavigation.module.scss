@@ -1,7 +1,131 @@
 .container {
   background-color: #a6d78c;
-  height: 100%;
   display: flex;
+  padding: 10px;
   flex-direction: column;
   justify-content: space-between;
+}
+.items {
+  width: 100px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  border-bottom: 5px solid;
+  border-bottom-color: lightyellow;
+  border-bottom-width: thin;
+  a {
+    visibility: collapse;
+    padding: 10px;
+    font-size: small;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+  }
+}
+
+.items.open_items{
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  border-bottom: 5px solid;
+  border-bottom-color: lightyellow;
+  border-bottom-width: thin;
+  a {
+    visibility: visible;
+    padding: 10px;
+    font-size: small;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+  }
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #52fff7;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+  .sidenav1 {padding-top: 15px;}
+  .sidenav1 a {font-size: 18px;}
+}
+.sidenav1 {
+  height: 100%;
+  width: 250px;
+  margin-left: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #52fff7;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav1 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav1 a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav1 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
