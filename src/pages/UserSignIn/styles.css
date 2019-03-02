@@ -4,7 +4,6 @@
   justify-content: center;
   margin: auto;
 }
-/*
 .coming-form {
   margin: auto;
   margin-top: 10px;
@@ -13,7 +12,7 @@
   flex-direction: column;
 }
 .coming-form .form-control {
-  !* display: inline-block;*!
+  /* display: inline-block;*/
   margin: auto;
   height: auto;
   margin-top: 10px;
@@ -22,7 +21,7 @@
   box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
-}*/
+}
 .coming-form input[type='code'] {
   margin-bottom: -1px;
   margin-top: 10px;

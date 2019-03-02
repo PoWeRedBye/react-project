@@ -4,7 +4,7 @@ import { Props, State } from './types';
 import { InputChange } from '../../types/react';
 import { SendBtn } from '../../components/send_btn';
 import { Axios } from '../../services/Axios';
-import {inspect} from "util";
+import styles from './UserSignIn.module.scss';
 
 export class UserSignIn extends React.Component<Props, State> {
   public state: State = {
@@ -53,13 +53,13 @@ export class UserSignIn extends React.Component<Props, State> {
   public render(): React.ReactNode {
     const { login, password } = this.state;
     return (
-      <div className="user_sign_in">
-        <form className="coming-form">
-          <h2 className="coming-form">Login screen</h2>
-          <input className="form-control" placeholder="Login" value={login} onChange={this.onLoginChange} />
+      <div className={styles.user_sign_in}>
+        <form className={styles["coming-form"]}>
+          <h2 className={styles["coming-form"]}>Login screen</h2>
+          <input className={styles["form-control"]} placeholder="Login" value={login} onChange={this.onLoginChange} />
           <input
             type="password"
-            className="form-control"
+            className={styles["form-control"]}
             placeholder="Password"
             value={password}
             onChange={this.onPasswordChange}

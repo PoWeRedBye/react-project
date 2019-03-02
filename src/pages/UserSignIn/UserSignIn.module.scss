@@ -1,0 +1,35 @@
+.user_sign_in {
+  display: block;
+  justify-content: center;
+  margin: auto;
+}
+.coming-form {
+  //margin: auto;
+  margin-top: 10px;
+  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+
+  &-form-control {
+    //display: inline-block;
+    height: auto;
+    margin-top: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  input[type='login'] {
+    margin-bottom: -1px;
+    margin-top: 10px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  input[type='password'] {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

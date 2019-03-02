@@ -1,5 +1,5 @@
-.coming-form {
-  /*margin-top: 10px;*/
+/*.coming-form {
+  !*margin-top: 10px;*!
   max-width: 330px;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
 
 }
 .coming-form .form-control {
-  /* display: inline-block;*/
+  !* display: inline-block;*!
   height: auto;
   margin: 5px 0;
   -webkit-box-sizing: border-box;
@@ -15,7 +15,7 @@
   box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
-}
+}*/
 
 html, body {
   height: 100%;
