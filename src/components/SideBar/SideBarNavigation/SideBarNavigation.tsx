@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import image from '../../../icons/creative.svg';
 import styles from './SideBarNavigation.module.scss';
 import { Props } from './types';
+import {NavLink} from "react-router-dom";
 
 export class SideBarNavigation extends React.Component<Props> {
   openOrNot = () => {
@@ -36,10 +37,10 @@ export class SideBarNavigation extends React.Component<Props> {
         </div>
        {/*user auth part*/}
         <div className={this.openOrNot()}>
-          <div className={this.getItemClassName()}>
+          <NavLink className={this.getItemClassName()}  to="/login">
             <img src={image} />
             <a> Login </a>
-          </div>
+          </NavLink>
         </div>
       </div>
     );

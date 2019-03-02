@@ -4,6 +4,10 @@
   padding: 10px;
   flex-direction: column;
   justify-content: space-between;
+
+  -webkit-box-shadow: 4px 0px 8px -3px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    4px 0px 8px -3px rgba(50, 50, 50, 0.75);
+  box-shadow:         4px 0px 8px -3px rgba(50, 50, 50, 0.75);
 }
 .items {
   display: flex;
@@ -34,12 +38,12 @@
   max-height: 30px;
   padding: 5px;
   background-color: red;
+  border-bottom: 5px solid;
+  border-bottom-color: lightyellow;
+  border-bottom-width: thin;
   a {
     visibility: visible;
     padding: 10px;
-    border-bottom: 5px solid;
-    border-bottom-color: lightyellow;
-    border-bottom-width: thin;
     font-size: small;
   }
   img {

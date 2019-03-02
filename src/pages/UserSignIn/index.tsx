@@ -4,6 +4,7 @@ import { Props, State } from './types';
 import { InputChange } from '../../types/react';
 import { SendBtn } from '../../components/send_btn';
 import { Axios } from '../../services/Axios';
+import {inspect} from "util";
 
 export class UserSignIn extends React.Component<Props, State> {
   public state: State = {
@@ -27,8 +28,7 @@ export class UserSignIn extends React.Component<Props, State> {
     Axios.POST('/user/login', {
       email: login,
       password,
-    })
-      .then((response: any) => {
+    }).then((response: any) => {
         console.log(response);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('refresh-token', response.data.refreshToken);
