@@ -1,0 +1,68 @@
+.profile_top {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.img_fluid {
+  max-width: 100%;
+
+  //background-image: ;
+}
+
+.userProfile_wrapper .bordered {
+  border: 8px solid rgba(255, 255, 255, 0.23);
+}
+
+.userProfile_wrapper .profile_top {
+  position: relative;
+}
+
+.userProfile_wrapper .profile_top .profile_content {
+  position: absolute;
+  top: 80px;
+  left: 110px;
+}
+
+.userProfile_wrapper .profile_top .profile_content .media_body h2, .userProfile_wrapper .profile_top .profile_content .media_body p {
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media_body {
+  flex: 1;
+}
+
+.rounded_circle {
+  border-radius: 50% !important;
+  position: fixed;
+  top: 75px;
+  left: 75px;
+
+}
+
+.rounded_circle .mr_30, .mx_30 {
+  margin-right: 1.875rem !important;
+  position: absolute;
+}
+
+.mb_20, .my_20 {
+  margin-bottom: 1.25rem !important;
+  position: fixed;
+  top: 75px;
+  left: 250px;
+}
+
+.media_body .pt-25, .py-25 {
+  padding-top: 1.563rem !important;
+}
