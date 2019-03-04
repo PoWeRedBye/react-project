@@ -2,6 +2,8 @@
   position: relative;
   display: block;
   overflow: hidden;
+  width: 1920px;
+  padding: 10px;
 }
 
 img {
@@ -9,60 +11,118 @@ img {
   border-style: none;
 }
 
-.img_fluid {
+.user_name {
+  color: white;
+}
+
+.profile_content {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile_content_left {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+  padding-left: 25px;
+  h1 {
+    font-size: large;
+  }
+  h2 {
+    padding-left: 10px;
+    font-size: medium;
+  }
+}
+
+.profile_content_right {
+  display: flex;
+  flex: 0.5;
+  flex-direction: column;
+}
+
+.profile_content_right_header{
+  display: flex;
+  flex-direction: row;
+}
+
+.profile_content_right_header_img{
+  padding-top: 10px;
+}
+
+.profile_content_right_h2{
+  padding-left: 25px;
+}
+
+.profile_info {
+  display: flex;
+  flex-direction: row;
   max-width: 100%;
-
-  //background-image: ;
+  padding-top: 66px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-image: url("../../icons/sr_558908_large.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.userProfile_wrapper .bordered {
-  border: 8px solid rgba(255, 255, 255, 0.23);
-}
-
-.userProfile_wrapper .profile_top {
-  position: relative;
-}
-
-.userProfile_wrapper .profile_top .profile_content {
-  position: absolute;
-  top: 80px;
-  left: 110px;
-}
-
-.userProfile_wrapper .profile_top .profile_content .media_body h2, .userProfile_wrapper .profile_top .profile_content .media_body p {
-  color: #fff;
-  margin-bottom: 0;
-}
 
 .media {
   display: flex;
   align-items: flex-start;
+  flex-direction: row;
 }
 
 .media_body {
   flex: 1;
+  padding: 25px;
 }
 
 .rounded_circle {
+  border: 2px fuchsia;
   border-radius: 50% !important;
-  position: fixed;
   top: 75px;
   left: 75px;
-
+  padding: 15px;
 }
 
 .rounded_circle .mr_30, .mx_30 {
   margin-right: 1.875rem !important;
-  position: absolute;
 }
 
 .mb_20, .my_20 {
   margin-bottom: 1.25rem !important;
-  position: fixed;
   top: 75px;
   left: 250px;
 }
 
 .media_body .pt-25, .py-25 {
   padding-top: 1.563rem !important;
+}
+
+.component-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-height: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  padding: 15px 30px;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px #545454 inset, 0 0 0 0 #3b3b3b;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: white;
+  transition: 0.15s ease-in-out;
+}
+/*'это когда я мышкой навожу'*/
+.component-btn:hover {
+  box-shadow: 0 0 10px 0 #bdbdbd inset, 0 0 10px 4px #545454;
+  color: #000000;
+  text-decoration: none;
 }
