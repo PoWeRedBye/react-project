@@ -29,3 +29,11 @@ div[id=root] {
   display: flex;
   flex-direction: column;
 }
+
+.d-flex {
+  display: flex;
+}
+
+.flex-direction-row {
+  flex-direction: row;
+}
