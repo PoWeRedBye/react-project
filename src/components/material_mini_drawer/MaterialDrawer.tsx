@@ -2,7 +2,10 @@ import React from 'react';
 // import classNames from 'classnames';
 
 
-export class MaterialDrawer extends React.Component {
+interface Props {
+  classes: AnyObject;
+  theme: AnyObject;
+}
 
 
 
