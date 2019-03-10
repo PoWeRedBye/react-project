@@ -37,10 +37,10 @@ const styles = (theme: any) => ({
   },
 });
 
-class MaterialHeader extends React.Component<Props> {
+export class MaterialHeader extends React.Component<Props> {
   //RENDER
   render() {
-    const { classes } = this.props;
+    //const { classes } = this.props;
     return (
       <div>
         <AppBar
@@ -73,14 +73,14 @@ class MaterialHeader extends React.Component<Props> {
                variant="h6"
                color="inherit"
                noWrap
-               classes={{root: myStyles["MaterialHeader-headerTitle-5"]}}
-            >/*classnames(
-                 'MuiTypography-root-64',
-                 'MaterialHeader-headerTitle-5',
-                 'MuiTypography-h6-81',
-                 'MuiTypography-colorInherit-93',
-                 'MuiTypography-noWrap-90',
-               )*//*classes={{ root: classes.headerTitle }}*/
+              className={classnames(
+                'MuiTypography-root-64',
+                'MaterialHeader-headerTitle-5',
+                'MuiTypography-h6-81',
+                'MuiTypography-colorInherit-93',
+                'MuiTypography-noWrap-90',
+              )}
+            >
             Mini variant drawer
             </Typography>
           </Toolbar>
@@ -89,7 +89,7 @@ class MaterialHeader extends React.Component<Props> {
     );
   }
 }
+/*classes={{root: myStyles["MaterialHeader-headerTitle-5"]}}*//*classes={{ root: classes.headerTitle }}*/
+//const WithStyles = withStyles(styles as any, { withTheme: true })(MaterialHeader);
 
-const WithStyles = withStyles(styles as any, { withTheme: true })(MaterialHeader);
-
-export const MiniHeader = WithStyles;
+//export const MiniHeader = WithStyles;

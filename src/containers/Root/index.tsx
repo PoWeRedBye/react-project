@@ -6,7 +6,7 @@ import { RootRouter } from '../../routes/root';
 import { MiniDrawer } from '../../components/material_mini_drawer';
 import { Props, State } from './types';
 import styles from './RootContainer.module.scss';
-import { MiniHeader } from '../../components/material_mini_header';
+import { MaterialHeader } from '../../components/material_mini_header';
 
 export class RootContainer extends React.Component<Props, State> {
   state: State = {
@@ -26,7 +26,7 @@ export class RootContainer extends React.Component<Props, State> {
     return (
       <BrowserRouter>
         <React.Fragment>
-          <MiniHeader handleDrawerToggle={this.onSideBarStateToggle} />
+          <MaterialHeader handleDrawerToggle={this.onSideBarStateToggle}/>
           <div className={styles.container}>
             <MiniDrawer isOpen={this.state.sideBarIsOpen} />
             <RootRouter />
