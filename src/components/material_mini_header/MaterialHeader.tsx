@@ -1,17 +1,16 @@
 import React from 'react';
 // Material imports:
+import myStyles from './MaterialHeader.module.scss';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 
+import MenuIcon from '@material-ui/icons/Menu';
 import classnames from 'classnames';
 import { Props } from './types';
-import { withStyles } from '@material-ui/core';
-import myStyles from './MaterialHeader.module.scss'
 
-const styles = (theme: any) => ({
+/*const styles = (theme: any) => ({
   root: {
     display: 'flex',
   },
@@ -35,61 +34,52 @@ const styles = (theme: any) => ({
   headerTitle: {
     marginLeft: 40,
   },
-});
+});*/
 
 export class MaterialHeader extends React.Component<Props> {
   //RENDER
   render() {
     //const { classes } = this.props;
     return (
-      <div>
-        <AppBar
-          position="fixed"
+      <AppBar
+        position="fixed"
+        className={classnames(
+          myStyles['MaterialHeader-appBar'],
+          myStyles['MuiPaper-root'],
+          myStyles['MuiPaper-elevation4'],
+          myStyles['MuiAppBar-root'],
+          myStyles['MuiAppBar-positionFixed'],
+          myStyles['MuiAppBar-colorPrimary'],
+          myStyles['mui-fixed'],
+        )}
+      >
+        <Toolbar
           className={classnames(
-            'MuiPaper-root-15',
-            'MuiPaper-elevation4-21',
-            'MuiAppBar-root-6',
-            'MuiAppBar-positionFixed-7',
-            'MuiAppBar-colorPrimary-13',
-            'mui-fixed',
-            'MaterialHeader-appBar-2',
+            myStyles['MuiToolbar-root'],
+            myStyles['MuiToolbar-regular'],
+            myStyles['MuiToolbar-gutters'],
+            myStyles['MaterialHeader-myToolbar'],
           )}
         >
-          {/*className={classes.appBar}*/}
-          {/*{myStyles.app_bar}*/}
-          <Toolbar
+          <IconButton color="inherit" aria-label="Open drawer" onClick={this.props.handleDrawerToggle}>
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
             className={classnames(
-              'MuiToolbar-root-42',
-              'MuiToolbar-regular-44',
-              'MuiToolbar-gutters-43',
-              'MaterialHeader-myToolbar-4',
+              myStyles['MuiTypography-root'],
+              myStyles['MaterialHeader-headerTitle'],
+              myStyles['MuiTypography-h6'],
+              myStyles['MuiTypography-colorInherit'],
+              myStyles['MuiTypography-noWrap'],
             )}
           >
-            {/*{ gutters: classes.myToolbar }*/}
-            <IconButton color="inherit" aria-label="Open drawer" onClick={this.props.handleDrawerToggle}>
-              <MenuIcon />
-            </IconButton>
-            <Typography
-               variant="h6"
-               color="inherit"
-               noWrap
-              className={classnames(
-                'MuiTypography-root-64',
-                'MaterialHeader-headerTitle-5',
-                'MuiTypography-h6-81',
-                'MuiTypography-colorInherit-93',
-                'MuiTypography-noWrap-90',
-              )}
-            >
             Mini variant drawer
-            </Typography>
-          </Toolbar>
-        </AppBar>
-      </div>
+          </Typography>
+        </Toolbar>
+      </AppBar>
     );
   }
 }
-/*classes={{root: myStyles["MaterialHeader-headerTitle-5"]}}*//*classes={{ root: classes.headerTitle }}*/
-//const WithStyles = withStyles(styles as any, { withTheme: true })(MaterialHeader);
-
-//export const MiniHeader = WithStyles;

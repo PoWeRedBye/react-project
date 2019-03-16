@@ -1,23 +1,21 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-import '../../styles/index.css';
 import { RootRouter } from '../../routes/root';
-import { MiniDrawer } from '../../components/material_mini_drawer';
-import { Props, State } from './types';
-import styles from './RootContainer.module.scss';
 import { MaterialHeader } from '../../components/material_mini_header';
+import { MiniDrawer } from '../../components/material_mini_drawer';
+import { MaterialContent } from '../../components/material-content';
+import { State } from './types';
+import styles from './RootContainer.module.scss';
 
-export class RootContainer extends React.Component<Props, State> {
+export class RootContainer extends React.Component<{}, State> {
   state: State = {
     sideBarIsOpen: false,
   };
 
   onSideBarStateToggle = () => {
-    console.log(this.state.sideBarIsOpen);
-    console.log('+_+_+_+_'.repeat(20));
     this.setState((prevState: State) => ({ sideBarIsOpen: !prevState.sideBarIsOpen }));
-    console.log(this.state.sideBarIsOpen);
   };
 
   // RENDER
@@ -25,13 +23,14 @@ export class RootContainer extends React.Component<Props, State> {
   render() {
     return (
       <BrowserRouter>
-        <React.Fragment>
-          <MaterialHeader handleDrawerToggle={this.onSideBarStateToggle}/>
-          <div className={styles.container}>
-            <MiniDrawer isOpen={this.state.sideBarIsOpen} />
+        <div className={styles.container}>
+          <CssBaseline />
+          <MaterialHeader handleDrawerToggle={this.onSideBarStateToggle} />
+          <MiniDrawer isOpen={this.state.sideBarIsOpen} />
+          <MaterialContent>
             <RootRouter />
-          </div>
-        </React.Fragment>
+          </MaterialContent>
+        </div>
       </BrowserRouter>
     );
   }

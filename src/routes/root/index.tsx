@@ -8,7 +8,8 @@ import { CartridgeForm } from '../../pages/CartridgeForm';
 import { ConsumptionForm } from '../../pages/ConpsumptionForm';
 import { PrintersForm } from '../../pages/PrintersForm';
 import { UserSignIn } from '../../pages/UserSignIn';
-import {UserProfilePage} from "../../pages/UserProfilePage";
+import { UserProfilePage } from '../../pages/UserProfilePage';
+import { ContractPrinter } from '../../pages/ContractPrinter';
 
 export class RootRouter extends React.Component {
   // RENDER
@@ -25,6 +26,7 @@ export class RootRouter extends React.Component {
         <Route exact path="/consumption-form" component={ConsumptionForm} />
         <Route exact path="/printer-form" component={PrintersForm} />
         <Route exact path="/user-profile" component={UserProfilePage} />
+        <Route exact path="/contract-printers" component={ContractPrinter} />
       </Switch>
     );
   }

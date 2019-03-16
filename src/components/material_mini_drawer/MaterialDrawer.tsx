@@ -89,8 +89,6 @@ class MaterialDrawer extends React.Component<Props, State> {
     const { classes } = this.props;
 
     return (
-      <div className={classes.root}>
-        <CssBaseline />
         <Drawer
           variant="permanent"
           className={classNames(classes.drawer, {
@@ -122,13 +120,6 @@ class MaterialDrawer extends React.Component<Props, State> {
             ))}
           </List>
         </Drawer>
-        <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <Typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          </Typography>
-        </main>
-      </div>
     );
   }
 }
