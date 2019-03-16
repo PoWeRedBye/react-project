@@ -6,8 +6,28 @@ import classNames from 'classnames';
 
 import { Props } from './types';
 import { SearchInput } from "../../../../components/search_input";
+import { ListComponent } from "../../../../components/list";
+import { Axios } from "../../../../services/Axios";
+import { InputChange } from "../../../../types/react";
 
 export class PrinterList extends React.Component<Props> {
+
+  public getList = ():void => {
+    Axios.POST('/printer/contract/getAllContractPrinterByClient', {
+      //TODO: need, add token in header!!!
+      client: this.onSearchChange,
+    }).then((response: any) => {
+      //TODO: response parsing
+    }).catch((error: any) => {
+        console.log(error);
+      });
+  };
+
+  private onSearchChange = (event: InputChange): void => {
+    const { value } = event.target;
+    this.setState(() => ({ search: value }));
+  };
+
   render() {
     return (
       <Card
@@ -16,8 +36,8 @@ export class PrinterList extends React.Component<Props> {
         }}
       >
         <CardContent>
-          <SearchInput value="" onChange={() => {}} />
-          <div>list</div>
+          <SearchInput value="" onChange={() => this.onSearchChange} />
+          <ListComponent selectItem={this.getList}/>
         </CardContent>
       </Card>
     );
