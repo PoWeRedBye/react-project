@@ -12,6 +12,8 @@ import { InputChange } from "../../../../types/react";
 
 export class PrinterList extends React.Component<Props> {
 
+  //TODO: 1111
+  //получить список с апихи
   public getList = ():void => {
     Axios.POST('/printer/contract/getAllContractPrinterByClient', {
       //TODO: need, add token in header!!!
@@ -22,7 +24,8 @@ export class PrinterList extends React.Component<Props> {
         console.log(error);
       });
   };
-
+  //TODO: 1111
+  // обработка метода ввода данных
   private onSearchChange = (event: InputChange): void => {
     const { value } = event.target;
     this.setState(() => ({ search: value }));

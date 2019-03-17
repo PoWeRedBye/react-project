@@ -22,16 +22,20 @@ export class ListComponent extends React.Component<Props, State> {
     list: hardcodedPrinters,
   };
 
+  //TODO: 1111
+  // обработка выбранного элемента модели из списка(которые надо передавать
+  // в след. компонент для отрисовки данных
   public selectedItem = ():void => {
 
   };
 
-  //TODO: Хуйню написал 100% =)
+  //TODO: 1111
+  //обновления сиска по данным с апихи
   public listUpdate = () => {
     this.setState(() => {
       list: this.props.list
-    });
-  };
+    })
+    };
 
 
   render() {
