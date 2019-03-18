@@ -1,11 +1,11 @@
-import { Printers } from './types';
+import { Printer } from '../../types/models';
 
-export const hardcodedPrinters: Printers[] = [
+export const hardcodedPrinters: Printer[] = [
   {
     _id: '5c8b985d8685ce1ef8483526',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P00',
-    client: 'irbis',
+    client: 'Maksym Poliakov',
     current_counter: 8000,
     counters: [
       {
@@ -126,7 +126,7 @@ export const hardcodedPrinters: Printers[] = [
     _id: '5c8b98678685ce1ef8483528',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P02',
-    client: 'irbis',
+    client: 'Kateyuna',
     current_counter: 15000,
     counters: [
       {
@@ -170,7 +170,7 @@ export const hardcodedPrinters: Printers[] = [
     _id: '5c8f92f14215e42b7cf8644c',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P04',
-    client: 'irbis',
+    client: 'Anisimov',
     current_counter: 70000,
     counters: [
       {
@@ -203,7 +203,7 @@ export const hardcodedPrinters: Printers[] = [
     _id: '5c8f92f64215e42b7cf8644d',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P05',
-    client: 'irbis',
+    client: 'Fleminh',
     current_counter: 15000,
     counters: [
       {
@@ -236,7 +236,7 @@ export const hardcodedPrinters: Printers[] = [
     _id: '5c8f92fa4215e42b7cf8644e',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P06',
-    client: 'irbis',
+    client: 'Ozarovskiy',
     current_counter: 0,
     counters: [],
     __v: 0,
@@ -245,7 +245,106 @@ export const hardcodedPrinters: Printers[] = [
     _id: '5c8f93164215e42b7cf8644f',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P03',
-    client: 'irbis',
+    client: 'Balebala',
+    current_counter: 30000,
+    counters: [
+      {
+        date: '2019-03-18T12:44:51.613Z',
+        _id: '5c8f931d4215e42b7cf86450',
+        counter: 15000,
+        new_cartridge: true,
+        new_fix_unit: false,
+        new_oscillatory_node: false,
+        new_rollers: true,
+        new_maintenance: false,
+        nothing: false,
+      },
+      {
+        date: '2019-03-18T12:44:51.613Z',
+        _id: '5c8f93294215e42b7cf86451',
+        counter: 30000,
+        new_cartridge: true,
+        new_fix_unit: true,
+        new_oscillatory_node: false,
+        new_rollers: true,
+        new_maintenance: false,
+        nothing: false,
+      },
+    ],
+    __v: 2,
+    previous_counter: 15000,
+  },
+  {
+    _id: '5c8f93164215e42b7cf8644a',
+    printer_model: 'canon 4015',
+    printer_serial_number: 'A00X00P03',
+    client: 'Balebala 2',
+    current_counter: 30000,
+    counters: [
+      {
+        date: '2019-03-18T12:44:51.613Z',
+        _id: '5c8f931d4215e42b7cf86450',
+        counter: 15000,
+        new_cartridge: true,
+        new_fix_unit: false,
+        new_oscillatory_node: false,
+        new_rollers: true,
+        new_maintenance: false,
+        nothing: false,
+      },
+      {
+        date: '2019-03-18T12:44:51.613Z',
+        _id: '5c8f93294215e42b7cf86451',
+        counter: 30000,
+        new_cartridge: true,
+        new_fix_unit: true,
+        new_oscillatory_node: false,
+        new_rollers: true,
+        new_maintenance: false,
+        nothing: false,
+      },
+    ],
+    __v: 2,
+    previous_counter: 15000,
+  },
+  {
+    _id: '5c8f93364215e42b7cf8644f',
+    printer_model: 'canon 4015',
+    printer_serial_number: 'A00X00P03',
+    client: 'Poliakova Kateryna',
+    current_counter: 30000,
+    counters: [
+      {
+        date: '2019-03-18T12:44:51.613Z',
+        _id: '5c8f931d4215e42b7cf86450',
+        counter: 15000,
+        new_cartridge: true,
+        new_fix_unit: false,
+        new_oscillatory_node: false,
+        new_rollers: true,
+        new_maintenance: false,
+        nothing: false,
+      },
+      {
+        date: '2019-03-18T12:44:51.613Z',
+        _id: '5c8f93294215e42b7cf86451',
+        counter: 30000,
+        new_cartridge: true,
+        new_fix_unit: true,
+        new_oscillatory_node: false,
+        new_rollers: true,
+        new_maintenance: false,
+        nothing: false,
+      },
+    ],
+    __v: 2,
+    previous_counter: 15000,
+  },
+  {
+    _id: '5c8f93164215e4ab7cf8644f',
+    printer_model: 'canon 4015',
+    printer_serial_number: 'A00X00P03',
+    client: 'Putin',
     current_counter: 30000,
     counters: [
       {
