@@ -1,3 +1,36 @@
 .root {
   width: 100%;
+  overflow-x: scroll;
+  max-height: 500px;
+}
+
+.item {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 1px;
+  // width: 5px -- if need visible scroll
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  //background: rgba(132, 134, 134, 0.8); -- if need visible scroll
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0);
 }

@@ -1,20 +1,35 @@
-import { ContractPrinter } from "../../pages/ContractPrinter";
-import { AnyObject } from "../../types/common";
+import { AnyObject } from '../../types/common';
 
 export interface Props {
-  classes?: AnyObject
+  classes?: AnyObject;
   className?: string;
   list?: [];
-  selectItem():void;
+  listUpdate(): void;
 }
 
 export interface State {
   list: Printers[];
 }
 
-
 export interface Printers {
-  printer_model: string,
-  printer_serial_number: string,
+  _id: string;
+  printer_model: string;
+  printer_serial_number: string;
   client: string;
+  current_counter: number;
+  previous_counter?: number;
+  counters?: PrintersCounters[];
+  __v: number;
+}
+
+export interface PrintersCounters {
+  date: string;
+  _id: string;
+  counter: number;
+  new_cartridge: boolean;
+  new_fix_unit: boolean;
+  new_oscillatory_node: boolean;
+  new_rollers: boolean;
+  new_maintenance: boolean;
+  nothing: boolean;
 }
