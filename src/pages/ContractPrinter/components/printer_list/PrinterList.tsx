@@ -21,7 +21,9 @@ export class PrinterList extends React.Component<Props> {
         token: localStorage.getItem('token'),
       },
       //TODO: need, add token in header!!!
-      client: this.onSearchChange,
+      body: {
+        client: this.onSearchChange
+      },
     })
       .then((response: any) => {
         //TODO: response parsing
