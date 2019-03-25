@@ -11,12 +11,12 @@ import styles from './PrintersList.module.scss';
 
 export class PrintersList extends React.Component<Props> {
   render() {
-    const { className, search, printersList, onSearchChange, onPrinterSelect } = this.props;
+    const { className, printersList, onSearchChange, onPrinterSelect } = this.props;
 
     return (
       <Card classes={{ root: classNames(className) }}>
         <CardContent classes={{ root: styles.content }}>
-          <SearchInput value={search} onChange={onSearchChange} />
+          <SearchInput onChange={onSearchChange} />
           <ListComponent items={printersList} onItemClick={onPrinterSelect} />
         </CardContent>
       </Card>

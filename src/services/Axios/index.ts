@@ -9,7 +9,7 @@ axios.defaults.headers.common['Content-Type'] = 'application/json; charset=utf-8
 axios.defaults.headers.common.Accept = 'application/json';
 
 export const Axios: AxiosService = ((): AxiosService => {
-  let AuthToken: string;
+  let AuthToken: string = localStorage.getItem('token') || '';
 
   const addHeaders = (userConfig: Config): Config => {
     const globalHeaders: AnyObject = {
@@ -18,7 +18,7 @@ export const Axios: AxiosService = ((): AxiosService => {
 
     if (AuthToken) {
       // Set headers that will be used only if user is logged in
-      globalHeaders['Bearer Token'] = AuthToken;
+      globalHeaders.token = AuthToken;
     }
 
     const { headers = {}, ...restConfigs } = userConfig;

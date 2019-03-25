@@ -2,8 +2,8 @@ import * as React from 'react';
 
 import { Props, State } from './types';
 import { InputChange } from '../../types/react';
-import { SendBtn } from '../../components/send_btn';
 import { Axios } from '../../services/Axios';
+import { SendBtn } from '../../components/send_btn';
 import styles from './UserSignIn.module.scss';
 
 export class UserSignIn extends React.Component<Props, State> {
@@ -28,7 +28,8 @@ export class UserSignIn extends React.Component<Props, State> {
     Axios.POST('/user/login', {
       email: login,
       password,
-    }).then((response: any) => {
+    })
+      .then((response: any) => {
         console.log(response);
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('refresh-token', response.data.refreshToken);
@@ -43,6 +44,7 @@ export class UserSignIn extends React.Component<Props, State> {
         const refresh = localStorage.getItem('refresh-token');
         console.log(refresh);
 
+        Axios.setAuthToken(response.data.token);
         this.setState(() => ({ login: '', password: '' }));
       })
       .catch((error: any) => {
@@ -54,12 +56,12 @@ export class UserSignIn extends React.Component<Props, State> {
     const { login, password } = this.state;
     return (
       <div className={styles.user_sign_in}>
-        <form className={styles["coming-form"]}>
-          <h2 className={styles["coming-form"]}>Login screen</h2>
-          <input className={styles["form-control"]} placeholder="Login" value={login} onChange={this.onLoginChange} />
+        <form className={styles['coming-form']}>
+          <h2 className={styles['coming-form']}>Login screen</h2>
+          <input className={styles['form-control']} placeholder="Login" value={login} onChange={this.onLoginChange} />
           <input
             type="password"
-            className={styles["form-control"]}
+            className={styles['form-control']}
             placeholder="Password"
             value={password}
             onChange={this.onPasswordChange}
