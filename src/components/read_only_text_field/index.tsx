@@ -1,19 +1,15 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
-import { State } from './types';
 
+import { State } from './types';
 import styles from './TextField.module.scss';
 
+// Первый аргумент в типизации - Пропсы, а ты передал Стейт.
+// Переименовать в Пропс и поправить интерфейс
 export class ReadOnlyTextField extends React.Component<State> {
-  state: State = {
-    value: '',
-    fieldname: '',
-  };
-
-//TODO: 2222
-
   render() {
-    const { value, fieldname } = this.state;
+    const { value, fieldname } = this.props;
+
     return (
       <TextField
         id="outlined-read-only-input"

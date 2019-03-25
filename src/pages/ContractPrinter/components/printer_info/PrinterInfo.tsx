@@ -3,46 +3,39 @@ import classNames from 'classnames';
 //Material
 import Card from '@material-ui/core/Card';
 
+import { ReadOnlyTextField } from '../../../../components/read_only_text_field';
 import { Props, State } from './types';
-import styles from './PrinterInfo.module.scss'
-import { ReadOnlyTextField } from "../../../../components/read_only_text_field";
-
+import styles from './PrinterInfo.module.scss';
 
 export class PrinterInfo extends React.Component<Props, State> {
-  state: State = {};
+  state: State = {}; // а этот стейт тебе точно нужен?
 
   //RENDER
-//TODO: 2222
 
   render() {
     const { className, printer } = this.props;
 
-    if (printer) {
-      return(
-        <Card classes={{root: classNames(className) }}>
-          <div className={styles.flex_row}>
-            <div className={styles.flex_column}>
-              <ReadOnlyTextField value={printer.printer_model} fieldname={"Printer_Model:"}/>
-              <ReadOnlyTextField value={printer.printer_serial_number} fieldname={"S/N:"}/>
-              <ReadOnlyTextField value={printer.client} fieldname={"Client:"}/>
-              <ReadOnlyTextField value={printer.current_counter.toString()} fieldname={"Counter:"}/>
-            </div>
-          </div>
-        </Card>
-      );
-
-    } else {
+    if (printer === null) {
       return (
-        <Card classes={{root: classNames(className) }}>
+        <Card classes={{ root: classNames(className) }}>
           <p>Выберите принтер</p>
         </Card>
       );
     }
 
-    /*return (
+    const { printer_model, printer_serial_number, client, current_counter } = printer;
+
+    return (
       <Card classes={{ root: classNames(className) }}>
-        {printer ? <pre>{JSON.stringify(printer, undefined, 2)}</pre> : 'Выберете принтер'}
+        <div className={styles.flex_row}>
+          <div className={styles.flex_column}>
+            <ReadOnlyTextField value={printer_model} fieldname="Printer_Model:" />
+            <ReadOnlyTextField value={printer_serial_number} fieldname="S/N:" />
+            <ReadOnlyTextField value={client} fieldname="Client:" />
+            <ReadOnlyTextField value={current_counter.toString()} fieldname="Counter:" />
+          </div>
+        </div>
       </Card>
-    );*/
+    );
   }
 }
