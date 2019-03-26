@@ -17,6 +17,8 @@
     flex: 1;
   }
   .printer_info {
+    display: flex;
+    flex-direction: column;
     flex: 3;
     height: 100%;
   }
