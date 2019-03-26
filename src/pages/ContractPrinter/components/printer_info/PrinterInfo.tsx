@@ -4,9 +4,10 @@ import classNames from 'classnames';
 import Card from '@material-ui/core/Card';
 
 import { ReadOnlyTextField } from '../../../../components/read_only_text_field';
+import { CountersList } from '../counters_list';
+
 import { Props, State } from './types';
 import styles from './PrinterInfo.module.scss';
-import { CountersList } from '../counters_list';
 
 export class PrinterInfo extends React.Component<Props, State> {
   state: State = {}; // а этот стейт тебе точно нужен?
