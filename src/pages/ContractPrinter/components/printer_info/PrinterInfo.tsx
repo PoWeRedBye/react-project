@@ -29,10 +29,10 @@ export class PrinterInfo extends React.Component<Props, State> {
       <Card classes={{ root: classNames(className) }}>
         <div className={styles.flex_row}>
           <div className={styles.flex_column}>
-            <ReadOnlyTextField value={printer_model} fieldname="Printer_Model:" />
-            <ReadOnlyTextField value={printer_serial_number} fieldname="S/N:" />
-            <ReadOnlyTextField value={client} fieldname="Client:" />
-            <ReadOnlyTextField value={current_counter.toString()} fieldname="Counter:" />
+            <ReadOnlyTextField value={printer_model} fieldName="Printer_Model:" />
+            <ReadOnlyTextField value={printer_serial_number} fieldName="S/N:" />
+            <ReadOnlyTextField value={client} fieldName="Client:" />
+            <ReadOnlyTextField value={current_counter} fieldName="Counter:" />
           </div>
         </div>
       </Card>
