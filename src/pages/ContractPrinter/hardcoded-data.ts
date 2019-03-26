@@ -61,7 +61,7 @@ export const hardcodedPrinters: Printer[] = [
         new_oscillatory_node: false,
         new_rollers: false,
         new_maintenance: false,
-        nothing: false
+        nothing: true
       },
       {
         date: "2019-03-15T12:11:33.062Z",
