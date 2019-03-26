@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import { ReadOnlyTextField } from '../../../../components/read_only_text_field';
 import { Props, State } from './types';
 import styles from './PrinterInfo.module.scss';
+import { CountersList } from '../counters_list';
 
 export class PrinterInfo extends React.Component<Props, State> {
   state: State = {}; // а этот стейт тебе точно нужен?
@@ -28,13 +29,19 @@ export class PrinterInfo extends React.Component<Props, State> {
     return (
       <Card classes={{ root: classNames(className) }}>
         <div className={styles.flex_row}>
-          <div className={styles.flex_column}>
-            <ReadOnlyTextField value={printer_model} fieldName="Printer_Model:" />
-            <ReadOnlyTextField value={printer_serial_number} fieldName="S/N:" />
+          <div className={styles.flex_column_1}>
             <ReadOnlyTextField value={client} fieldName="Client:" />
+            <ReadOnlyTextField value={printer_model} fieldName="Printer_Model:" />
+          </div>
+          <div className={styles.flex_column_2}>
+            <ReadOnlyTextField value={printer_serial_number} fieldName="S/N:" />
             <ReadOnlyTextField value={current_counter} fieldName="Counter:" />
           </div>
         </div>
+        <div className={styles.flex}>
+          <h2 className={styles['component-btn']}>Add new counters</h2>
+        </div>
+        <CountersList items={printer.counters} />
       </Card>
     );
   }

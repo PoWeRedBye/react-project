@@ -14,7 +14,7 @@ export class ReadOnlyTextField extends React.Component<Props, State> {
     return (
       <TextField
         label={fieldName}
-        defaultValue={value}
+        value={value}
         classes={{ root: styles.text_field }}
         margin="normal"
         InputProps={{
