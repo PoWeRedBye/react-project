@@ -245,7 +245,7 @@ export const hardcodedPrinters: Printer[] = [
     _id: '5c8f93164215e42b7cf8644f',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P03',
-    client: 'Balebala',
+    client: '(.)(.)',
     current_counter: 30000,
     counters: [
       {
@@ -278,7 +278,7 @@ export const hardcodedPrinters: Printer[] = [
     _id: '5c8f93164215e42b7cf8644a',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P03',
-    client: 'Balebala 2',
+    client: '.l.',
     current_counter: 30000,
     counters: [
       {
@@ -344,7 +344,7 @@ export const hardcodedPrinters: Printer[] = [
     _id: '5c8f93164215e4ab7cf8644f',
     printer_model: 'canon 4015',
     printer_serial_number: 'A00X00P03',
-    client: 'Putin',
+    client: '( . )( . )',
     current_counter: 30000,
     counters: [
       {
