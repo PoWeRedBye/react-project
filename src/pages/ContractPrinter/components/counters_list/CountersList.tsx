@@ -19,8 +19,14 @@ export class CountersList extends React.Component<Props, State> {
         <List classes={{ root: styles.root }}>
           {items.map(item => (
             <ListItem key={item._id} className={styles.item}>
-              <ReadOnlyTextField value={item.counter} fieldName="Counter:" />
-              <ReadOnlyTextField value={item.date} fieldName="Date:" />
+              <div className={styles.flex_row}>
+                <div className={styles.flex_column_1}>
+                  <ReadOnlyTextField value={item.counter} fieldName="Counter:" />
+                </div>
+                <div className={styles.flex_column_2}>
+                  <ReadOnlyTextField value={item.date} fieldName="Date:" />
+                </div>
+              </div>
               <div className={styles.flex_row_1}>
                 <Switcher checked={item.new_cartridge} label="new cartridge" />
                 <Switcher checked={item.new_fix_unit} label="new fix unit" />
