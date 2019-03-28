@@ -6,5 +6,5 @@ export interface Props {
 }
 
 export interface State {
-
+  modalIsOpen: boolean;
 }

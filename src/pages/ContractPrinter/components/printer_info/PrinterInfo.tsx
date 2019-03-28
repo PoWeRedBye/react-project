@@ -8,12 +8,18 @@ import { CountersList } from '../counters_list';
 
 import { Props, State } from './types';
 import styles from './PrinterInfo.module.scss';
+import { CountersModal } from "../counters_modal";
 
 export class PrinterInfo extends React.Component<Props, State> {
-  state: State = {}; // а этот стейт тебе точно нужен?
+  state: State = {
+    modalIsOpen: false,
+  }; // а этот стейт тебе точно нужен?
+
+  private toggleModal = (): void => {
+    this.setState((prevState: State) => ({ modalIsOpen: !prevState.modalIsOpen }));
+  };
 
   //RENDER
-
   render() {
     const { className, printer } = this.props;
 
@@ -40,9 +46,10 @@ export class PrinterInfo extends React.Component<Props, State> {
           </div>
         </div>
         <div className={styles.flex}>
-          <h2 className={styles['component-btn']}>Add new counters</h2>
+          <h2 className={styles['component-btn']} onClick={this.toggleModal}>Add new counters</h2>
         </div>
         <CountersList items={printer.counters} />
+        <CountersModal open={this.state.modalIsOpen} handleClose={this.toggleModal}/>
       </Card>
     );
   }

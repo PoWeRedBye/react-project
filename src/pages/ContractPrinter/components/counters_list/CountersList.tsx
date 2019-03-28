@@ -4,7 +4,7 @@ import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-import { Switcher } from '../../../../components/switch';
+import { Switcher } from '../../../../components/non_checked_switch';
 import { ReadOnlyTextField } from '../../../../components/read_only_text_field';
 
 import { Props, State } from './types';
