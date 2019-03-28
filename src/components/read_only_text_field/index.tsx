@@ -7,7 +7,6 @@ import styles from './TextField.module.scss';
 // Первый аргумент в типизации - Пропсы, а ты передал Стейт.
 // Переименовать в Пропс и поправить интерфейс
 export class ReadOnlyTextField extends React.Component<Props, State> {
-
   render() {
     const { value, fieldName } = this.props;
 

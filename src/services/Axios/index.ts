@@ -1,6 +1,6 @@
 import axios, { AxiosPromise, AxiosRequestConfig as Config } from 'axios';
 
-import { AnyObject } from '../../types/common';
+import { AnyObject } from 'src/types/common';
 import { AxiosService } from './types';
 
 // Set default params, headers and other options for axios

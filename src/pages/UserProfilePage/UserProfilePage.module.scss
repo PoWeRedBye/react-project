@@ -40,16 +40,16 @@ img {
   flex-direction: column;
 }
 
-.profile_content_right_header{
+.profile_content_right_header {
   display: flex;
   flex-direction: row;
 }
 
-.profile_content_right_header_img{
+.profile_content_right_header_img {
   padding-top: 10px;
 }
 
-.profile_content_right_h2{
+.profile_content_right_h2 {
   padding-left: 25px;
 }
 
@@ -62,11 +62,10 @@ img {
   padding-right: 10px;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  background-image: url("../../icons/sr_558908_large.jpg");
+  background-image: url('../../icons/sr_558908_large.jpg');
   background-repeat: no-repeat;
   background-size: contain;
 }
-
 
 .media {
   display: flex;
@@ -87,17 +86,20 @@ img {
   padding: 15px;
 }
 
-.rounded_circle .mr_30, .mx_30 {
+.rounded_circle .mr_30,
+.mx_30 {
   margin-right: 1.875rem !important;
 }
 
-.mb_20, .my_20 {
+.mb_20,
+.my_20 {
   margin-bottom: 1.25rem !important;
   top: 75px;
   left: 250px;
 }
 
-.media_body .pt-25, .py-25 {
+.media_body .pt-25,
+.py-25 {
   padding-top: 1.563rem !important;
 }
 

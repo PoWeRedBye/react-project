@@ -1,15 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { HomePage } from '../../pages/Home';
-import { ProductRegistration } from '../../pages/ProductRegistrationForm';
-import { ComingForm } from '../../pages/ComingForm';
-import { CartridgeForm } from '../../pages/CartridgeForm';
-import { ConsumptionForm } from '../../pages/ConpsumptionForm';
-import { PrintersForm } from '../../pages/PrintersForm';
-import { UserSignIn } from '../../pages/UserSignIn';
-import { UserProfilePage } from '../../pages/UserProfilePage';
-import { ContractPrinter } from '../../pages/ContractPrinter';
+import { HomePage } from 'src/pages/Home';
+import { ProductRegistration } from 'src/pages/ProductRegistrationForm';
+import { ComingForm } from 'src/pages/ComingForm';
+import { CartridgeForm } from 'src/pages/CartridgeForm';
+import { ConsumptionForm } from 'src/pages/ConpsumptionForm';
+import { PrintersForm } from 'src/pages/PrintersForm';
+import { UserSignIn } from 'src/pages/UserSignIn';
+import { UserProfilePage } from 'src/pages/UserProfilePage';
+import { ContractPrinter } from 'src/pages/ContractPrinter';
 
 export class RootRouter extends React.Component {
   // RENDER

@@ -6,8 +6,8 @@
   justify-content: space-between;
 
   -webkit-box-shadow: 4px 0px 8px -3px rgba(50, 50, 50, 0.75);
-  -moz-box-shadow:    4px 0px 8px -3px rgba(50, 50, 50, 0.75);
-  box-shadow:         4px 0px 8px -3px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 4px 0px 8px -3px rgba(50, 50, 50, 0.75);
+  box-shadow: 4px 0px 8px -3px rgba(50, 50, 50, 0.75);
 }
 .items {
   display: flex;
@@ -25,14 +25,13 @@
     font-size: small;
   }
   img {
-
     width: 30px;
     height: 30px;
     //padding: 5px;
   }
 }
 
-.open_items{
+.open_items {
   display: flex;
   flex-direction: row;
   max-height: 30px;

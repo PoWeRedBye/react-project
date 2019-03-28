@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { State, Props } from './types';
+import { Props, State } from './types';
 import './styles.css';
 
 export class Burger extends React.Component<Props, State> {

@@ -192,13 +192,13 @@ export class CartridgeForm extends React.Component<Props, State> {
           </div>
         </div>
         {/*<Modal centered isOpen={modalIsOpen} toggle={this.toggleModal}>*/}
-          {/*<ModalBody>*/}
-            {/*{shownAvailableParts.map(*/}
-              {/*(part: Part): JSX.Element => (*/}
-                {/*<PartsModal key={part.code} {...part} onClick={this.onAddPartsClick(part)} />*/}
-              {/*),*/}
-            {/*)}*/}
-          {/*</ModalBody>*/}
+        {/*<ModalBody>*/}
+        {/*{shownAvailableParts.map(*/}
+        {/*(part: Part): JSX.Element => (*/}
+        {/*<PartsModal key={part.code} {...part} onClick={this.onAddPartsClick(part)} />*/}
+        {/*),*/}
+        {/*)}*/}
+        {/*</ModalBody>*/}
         {/*</Modal>*/}
       </div>
     );

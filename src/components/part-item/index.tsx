@@ -1,7 +1,7 @@
 import * as React from 'react';
 
+import { InputChange } from 'src/types/react';
 import { Props, State } from './types';
-import { InputChange } from '../../types/react';
 import './styles.css';
 
 export class PartItem extends React.Component<Props, State> {

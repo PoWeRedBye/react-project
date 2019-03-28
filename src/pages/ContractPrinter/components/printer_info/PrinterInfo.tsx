@@ -8,7 +8,7 @@ import { CountersList } from '../counters_list';
 
 import { Props, State } from './types';
 import styles from './PrinterInfo.module.scss';
-import { CountersModal } from "../counters_modal";
+import { CountersModal } from '../counters_modal';
 
 export class PrinterInfo extends React.Component<Props, State> {
   state: State = {
@@ -46,10 +46,12 @@ export class PrinterInfo extends React.Component<Props, State> {
           </div>
         </div>
         <div className={styles.flex}>
-          <h2 className={styles['component-btn']} onClick={this.toggleModal}>Add new counters</h2>
+          <h2 className={styles['component-btn']} onClick={this.toggleModal}>
+            Add new counters
+          </h2>
         </div>
         <CountersList items={printer.counters} />
-        <CountersModal open={this.state.modalIsOpen} handleClose={this.toggleModal}/>
+        <CountersModal open={this.state.modalIsOpen} handleClose={this.toggleModal} />
       </Card>
     );
   }

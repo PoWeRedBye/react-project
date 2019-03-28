@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React from 'react';
 import './styles.css';
 
 export class Table extends React.Component {
   // RENDER
 
-  public render(): React.ReactNode {
+  render(): React.ReactNode {
     return (
       /* нужно разуплится с наполнением контента в табличку, сделать её пригодной для всех таблиц */
       <div>

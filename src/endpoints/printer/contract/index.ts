@@ -1,5 +1,5 @@
 import { AxiosPromise } from 'axios';
-import { Axios } from '../../../services/Axios';
+import { Axios } from 'src/services/Axios';
 
 const urlPrefix = '/printer/contract';
 

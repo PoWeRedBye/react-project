@@ -5,7 +5,6 @@ import TextField from '@material-ui/core/TextField';
 import { InputAdornment } from '@material-ui/core';
 import { Send } from '@material-ui/icons';
 
-import send from '../../icons/done.svg';
 import { Props, State } from './types';
 import styles from './SearchInput.module.scss';
 

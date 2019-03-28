@@ -1,7 +1,6 @@
 // libraries party imports
 import React from 'react';
 import debounce from 'lodash/debounce';
-
 // Import global constants | types | services | models/modules/containers | components | styles
 import { DEFAULT_LIMIT } from '../../constants';
 import { ServerResponse } from '../../types/server';

@@ -1,17 +1,17 @@
-import * as React from 'react';
+import React from 'react';
 import merge from 'classnames';
 
 import { Props, State } from './types';
 import './styles.css';
 
 export class SendBtn extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     loading: false,
   };
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render(): React.ReactNode {
     const { children, onClick } = this.props;
     const { loading } = this.state;
 

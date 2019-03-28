@@ -1,21 +1,21 @@
 import React from 'react';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
-import image from '../../../icons/creative.svg';
+import image from 'src/icons/creative.svg';
 import styles from './SideBarNavigation.module.scss';
 import { Props } from './types';
-import {NavLink} from "react-router-dom";
 
 export class SideBarNavigation extends React.Component<Props> {
   openOrNot = () => {
-    if (this.props.isOpen){
+    if (this.props.isOpen) {
       return classNames(styles.open);
     } else {
       return classNames(styles.close);
     }
   };
   getItemClassName = () => {
-    if (this.props.isOpen){
+    if (this.props.isOpen) {
       return classNames(styles.open_items);
     } else {
       return classNames(styles.items);
@@ -35,9 +35,9 @@ export class SideBarNavigation extends React.Component<Props> {
             <a> Some Other Text </a>
           </div>
         </div>
-       {/*user auth part*/}
+        {/*user auth part*/}
         <div className={this.openOrNot()}>
-          <NavLink className={this.getItemClassName()}  to="/login">
+          <NavLink className={this.getItemClassName()} to="/login">
             <img src={image} />
             <a> Login </a>
           </NavLink>

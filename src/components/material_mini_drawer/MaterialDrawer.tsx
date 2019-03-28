@@ -1,13 +1,7 @@
 import React from 'react';
 // Material Drawer imports:
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar'; //
-import Toolbar from '@material-ui/core/Toolbar'; //
 import List from '@material-ui/core/List';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton'; //
-import MenuIcon from '@material-ui/icons/Menu'; //
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -15,8 +9,6 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
-
-import { AnyObject } from '../../types/common';
 
 import { Props, State } from './types';
 
@@ -89,37 +81,37 @@ class MaterialDrawer extends React.Component<Props, State> {
     const { classes } = this.props;
 
     return (
-        <Drawer
-          variant="permanent"
-          className={classNames(classes.drawer, {
+      <Drawer
+        variant="permanent"
+        className={classNames(classes.drawer, {
+          [classes.drawerOpen]: this.props.isOpen,
+          [classes.drawerClose]: !this.props.isOpen,
+        })}
+        classes={{
+          paper: classNames(classes.drawerFix, {
             [classes.drawerOpen]: this.props.isOpen,
             [classes.drawerClose]: !this.props.isOpen,
-          })}
-          classes={{
-            paper: classNames(classes.drawerFix, {
-              [classes.drawerOpen]: this.props.isOpen,
-              [classes.drawerClose]: !this.props.isOpen,
-            }),
-          }}
-          open={this.props.isOpen}
-        >
-          <List>
-            {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List>
-        </Drawer>
+          }),
+        }}
+        open={this.props.isOpen}
+      >
+        <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <List>
+          {['All mail', 'Trash', 'Spam'].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
     );
   }
 }

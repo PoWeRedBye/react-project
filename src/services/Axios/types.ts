@@ -1,5 +1,5 @@
 import { AxiosPromise, AxiosRequestConfig as Config } from 'axios';
-import { AnyObject } from '../../types/common';
+import { AnyObject } from 'src/types/common';
 
 interface AxiosServiceInterface {
   setAuthToken(token: string): void;

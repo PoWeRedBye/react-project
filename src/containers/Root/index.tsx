@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import { RootRouter } from '../../routes/root';
-import { MaterialHeader } from '../../components/material_mini_header';
-import { MiniDrawer } from '../../components/material_mini_drawer';
-import { MaterialContent } from '../../components/material-content';
+import { RootRouter } from 'src/routes/root';
+import { MaterialHeader } from 'src/components/material_mini_header';
+import { MiniDrawer } from 'src/components/material_mini_drawer';
+import { MaterialContent } from 'src/components/material-content';
 import { State } from './types';
 import styles from './RootContainer.module.scss';
 
