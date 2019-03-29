@@ -2,10 +2,10 @@
 import React from 'react';
 import debounce from 'lodash/debounce';
 // Import global constants | types | services | models/modules/containers | components | styles
-import { DEFAULT_LIMIT } from '../../constants';
-import { ServerResponse } from '../../types/server';
-import { Printer } from '../../types/models';
-import { getContractPrinters } from '../../endpoints/printer/contract';
+import { DEFAULT_LIMIT } from 'src/constants';
+import { ServerResponse } from 'src/types/server';
+import { Printer } from 'src/types/models';
+import { getContractPrinters } from 'src/endpoints/printer/contract';
 // Local -//-//-
 import { PrintersList } from './components/printers_list';
 import { PrinterInfo } from './components/printer_info';

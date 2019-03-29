@@ -1,6 +1,5 @@
 import React from 'react';
-import Checkbox from '@material-ui/core/Checkbox';
-import { FormControlLabel } from '@material-ui/core';
+import { Checkbox, FormControlLabel } from 'src/proxy/material';
 
 import { Props, State } from './types';
 
@@ -10,17 +9,4 @@ export class Switcher extends React.Component<Props, State> {
     return <FormControlLabel control={<Checkbox checked={checked} value="" color="secondary" />} label={label} />;
   }
 }
-{
-  /*
-   <Checkbox
-      checked={checked}
-      value=""
-      color="primary"
-    />
 
-<Switch
-checked={checked}
-value="checkedA"
-color="primary"
-  />*/
-}

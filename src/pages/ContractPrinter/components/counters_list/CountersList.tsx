@@ -1,10 +1,9 @@
 import React from 'react';
 //Material
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import {List, ListItem} from 'src/proxy/material';
 
-import { Switcher } from '../../../../components/non_checked_switch';
-import { ReadOnlyTextField } from '../../../../components/read_only_text_field';
+import { Switcher } from 'src/components/non_checked_switch';
+import { Input } from 'src/components/read_only_text_field';
 
 import { Props, State } from './types';
 import styles from './CountersList.module.scss';
@@ -20,10 +19,10 @@ export class CountersList extends React.Component<Props, State> {
             <ListItem key={item._id} className={styles.item}>
               <div className={styles.flex_row}>
                 <div className={styles.flex_column_1}>
-                  <ReadOnlyTextField value={item.counter} fieldName="Counter:" />
+                  <Input disabled value={item.counter} fieldName="Counter:" />
                 </div>
                 <div className={styles.flex_column_2}>
-                  <ReadOnlyTextField value={item.date} fieldName="Date:" />
+                  <Input disabled value={item.date} fieldName="Date:" />
                 </div>
               </div>
               <div className={styles.flex_row_1}>

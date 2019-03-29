@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 //Material
-import Card from '@material-ui/core/Card';
+import { Card } from 'src/proxy/material';
 
-import { ReadOnlyTextField } from '../../../../components/read_only_text_field';
+import { Input } from 'src/components/read_only_text_field';
 import { CountersList } from '../counters_list';
 
 import { Props, State } from './types';
@@ -37,12 +37,12 @@ export class PrinterInfo extends React.Component<Props, State> {
       <Card classes={{ root: classNames(className) }}>
         <div className={styles.flex_row}>
           <div className={styles.flex_column_1}>
-            <ReadOnlyTextField value={client} fieldName="Client:" />
-            <ReadOnlyTextField value={printer_model} fieldName="Printer_Model:" />
+            <Input disabled value={client} fieldName="Client:" />
+            <Input disabled value={printer_model} fieldName="Printer_Model:" />
           </div>
           <div className={styles.flex_column_2}>
-            <ReadOnlyTextField value={printer_serial_number} fieldName="S/N:" />
-            <ReadOnlyTextField value={current_counter} fieldName="Counter:" />
+            <Input disabled value={printer_serial_number} fieldName="S/N:" />
+            <Input disabled value={current_counter} fieldName="Counter:" />
           </div>
         </div>
         <div className={styles.flex}>
@@ -51,7 +51,11 @@ export class PrinterInfo extends React.Component<Props, State> {
           </h2>
         </div>
         <CountersList items={printer.counters} />
-        <CountersModal open={this.state.modalIsOpen} handleClose={this.toggleModal} />
+        <CountersModal
+          open={this.state.modalIsOpen}
+          handleClose={this.toggleModal}
+          serialNumber={printer_serial_number}
+        />
       </Card>
     );
   }

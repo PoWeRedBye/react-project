@@ -1,40 +1,10 @@
 import React from 'react';
 // Material imports:
-import myStyles from './MaterialHeader.module.scss';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-
-import MenuIcon from '@material-ui/icons/Menu';
+import {AppBar ,Toolbar ,Typography , IconButton, MenuIcon} from 'src/proxy/material';
 import classnames from 'classnames';
-import { Props } from './types';
 
-/*const styles = (theme: any) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  toolbar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
-  myToolbar: {
-    padding: '0 6px',
-  },
-  headerTitle: {
-    marginLeft: 40,
-  },
-});*/
+import { Props } from './types';
+import myStyles from './MaterialHeader.module.scss';
 
 export class MaterialHeader extends React.Component<Props> {
   //RENDER

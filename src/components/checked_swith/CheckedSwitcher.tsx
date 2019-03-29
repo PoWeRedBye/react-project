@@ -1,24 +1,26 @@
 import React from 'react';
-import { Checkbox, FormControlLabel } from '@material-ui/core';
+import { Checkbox, FormControlLabel } from 'src/proxy/material';
 
-import { Props, State } from './types';
+import { Props} from './types';
 
-export class CheckedSwitcher extends React.Component<Props, State> {
-  state: State = {
-    checked: false,
-  };
-
-  onChecked = (): void => {
-    this.setState((prevState: State) => ({ checked: !prevState.checked }));
+export class CheckedSwitcher extends React.Component<Props> {
+  onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    this.props.onChange(Boolean(event.target.value));
   };
 
   render() {
-    const { label } = this.props;
-    const { checked } = this.state;
+    const { label, value } = this.props;
     return (
       <FormControlLabel
-        control={<Checkbox checked={checked} value="" onChange={this.onChecked} color="primary" />}
         label={label}
+        control={
+          <Checkbox
+            checked={value}
+            value=""
+            onChange={this.onChange}
+            color="primary"
+          />
+        }
       />
     );
   }
