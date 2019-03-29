@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import { InputChange } from '../../types/react';
-import { SendBtn } from '../../components/send_btn';
+import { InputChange } from 'src/types/react';
+import { SendBtn } from 'src/components/send_btn';
 import { Props, State } from './types';
 import './styles.css';
 

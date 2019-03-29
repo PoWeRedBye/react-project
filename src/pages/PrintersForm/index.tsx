@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Props, State } from './types';
-import { InputChange } from '../../types/react';
-import { SendBtn } from '../../components/send_btn';
+import { InputChange } from 'src/types/react';
+import { SendBtn } from 'src/components/send_btn';
 
 export class PrintersForm extends React.Component<Props, State> {
   public state: State = {

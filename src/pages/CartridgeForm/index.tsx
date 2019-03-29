@@ -1,10 +1,10 @@
 import * as React from 'react';
 import merge from 'classnames';
 
-import { AnyFunction } from '../../types/common';
-import { InputChange } from '../../types/react';
-import { SendBtn } from '../../components/send_btn';
-import { PartItem } from '../../components/part-item';
+import { AnyFunction } from 'src/types/common';
+import { InputChange } from 'src/types/react';
+import { SendBtn } from 'src/components/send_btn';
+import { PartItem } from 'src/components/part-item';
 // import { PartsModal } from '../../components/parts-modal';
 import { HardcodedParts } from './hardcoded-data';
 import { Part, Props, State } from './types';

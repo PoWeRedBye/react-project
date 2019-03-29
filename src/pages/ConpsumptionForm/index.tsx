@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Props, State } from './types';
-import { SendBtn } from '../../components/send_btn';
-import { InputChange } from '../../types/react';
+import { SendBtn } from 'src/components/send_btn';
+import { InputChange } from 'src/types/react';
 import './styles.css';
 
 export class ConsumptionForm extends React.Component<Props, State> {
