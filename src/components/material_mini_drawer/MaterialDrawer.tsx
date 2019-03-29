@@ -1,14 +1,8 @@
 import React from 'react';
-// Material Drawer imports:
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
-import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
+// Material:
+import { Drawer, InboxIcon, List, ListItem, ListItemIcon, ListItemText, MailIcon } from 'material';
+import { withStyles } from '@material-ui/core/styles';
 
 import { Props, State } from './types';
 
@@ -95,6 +89,7 @@ class MaterialDrawer extends React.Component<Props, State> {
         }}
         open={this.props.isOpen}
       >
+        {/* TODO {Maxim Ozarovskiy}: replace items list with actual redirect buttons */}
         <List>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
@@ -103,6 +98,7 @@ class MaterialDrawer extends React.Component<Props, State> {
             </ListItem>
           ))}
         </List>
+        {/* TODO {Maxim Ozarovskiy}: add only one login/logout button at this list */}
         <List>
           {['All mail', 'Trash', 'Spam'].map((text, index) => (
             <ListItem button key={text}>

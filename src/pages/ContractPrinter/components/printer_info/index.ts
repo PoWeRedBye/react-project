@@ -1,1 +1,1 @@
-export * from './PrinterInfo';
+export { PrinterInfo } from './PrinterInfo';

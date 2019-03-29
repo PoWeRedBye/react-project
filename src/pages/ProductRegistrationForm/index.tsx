@@ -1,29 +1,29 @@
-import * as React from 'react';
+import React from 'react';
 
-import { InputChange } from '../../types/react';
-import { SendBtn } from '../../components/send_btn';
+import { InputChange } from 'src/types/react';
+import { SendBtn } from 'src/components/send_btn';
 import { Props, State } from './types';
 import './styles.css';
 
 export class ProductRegistration extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     code: '',
     name: '',
   };
 
   // Event handlers
 
-  private onCodeChange = (event: InputChange): void => {
+  onCodeChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ code: value }));
   };
 
-  private onNameChange = (event: InputChange): void => {
+  onNameChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ name: value }));
   };
 
-  private onRegisterProductButtonClick = (): void => {
+  onRegisterProductButtonClick = () => {
     const { code, name } = this.state;
     console.log({ code, name });
     this.setState(() => ({ code: '', name: '' }));
@@ -31,7 +31,7 @@ export class ProductRegistration extends React.Component<Props, State> {
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render() {
     const { code, name } = this.state;
 
     return (

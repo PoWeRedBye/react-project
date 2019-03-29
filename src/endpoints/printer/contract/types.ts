@@ -1,14 +1,12 @@
-export interface Props {
-  open: boolean;
-  handleClose(): void;
-  className?: string;
-  serialNumber: string;
+export interface ContractPrinters {
+  client?: string;
+  limit: number;
+  page: number;
 }
 
-export interface State {
-  value: string;
+export interface ContractPrintersCounter {
   printer_serial_number: string;
-  counter: number;
+  counter: string,
   new_cartridge: boolean;
   new_fix_unit: boolean;
   new_oscillatory_node: boolean;

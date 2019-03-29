@@ -1,14 +1,14 @@
 import { AxiosPromise } from 'axios';
 import { Axios } from 'src/services/Axios';
 
+import * as Payload from './types';
+
 const urlPrefix = '/printer/contract';
 
-interface ContractPrintersPayload {
-  client?: string;
-  limit: number;
-  page: number;
-}
-
-export const getContractPrinters = (payload: ContractPrintersPayload): AxiosPromise => {
+export const getContractPrinters = (payload: Payload.ContractPrinters): AxiosPromise => {
   return Axios.POST(`${urlPrefix}/getAllContractPrinterByClient`, payload);
+};
+
+export const addContractPrinterCounters = (payload: Payload.ContractPrintersCounter): AxiosPromise => {
+  return Axios.POST(`${urlPrefix}/addNewCounterToContractPrinter`, payload);
 };

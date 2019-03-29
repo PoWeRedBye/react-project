@@ -1,1 +1,1 @@
-export * from './MaterialHeader';
+export { MaterialHeader } from './MaterialHeader';

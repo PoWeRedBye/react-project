@@ -1,28 +1,29 @@
-import * as React from 'react';
+import React from 'react';
+
+import { InputChange } from 'src/types/react';
+import { Axios } from 'src/services/Axios';
+import { SendBtn } from 'src/components/send_btn';
 
 import { Props, State } from './types';
-import { InputChange } from '../../types/react';
-import { Axios } from '../../services/Axios';
-import { SendBtn } from '../../components/send_btn';
 import styles from './UserSignIn.module.scss';
 
 export class UserSignIn extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     login: '',
     password: '',
   };
 
-  private onLoginChange = (event: InputChange): void => {
+  onLoginChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ login: value }));
   };
 
-  private onPasswordChange = (event: InputChange): void => {
+  onPasswordChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ password: value }));
   };
 
-  private onLoginButtonClick = (): void => {
+  onLoginButtonClick = () => {
     const { login, password } = this.state;
     console.log(login, password);
     Axios.POST('/user/login', {
@@ -52,7 +53,7 @@ export class UserSignIn extends React.Component<Props, State> {
       });
   };
 
-  public render(): React.ReactNode {
+  render() {
     const { login, password } = this.state;
     return (
       <div className={styles.user_sign_in}>

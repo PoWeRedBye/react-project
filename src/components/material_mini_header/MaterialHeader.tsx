@@ -1,40 +1,10 @@
 import React from 'react';
+import classNames from 'classnames';
 // Material imports:
-import myStyles from './MaterialHeader.module.scss';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+import { AppBar, IconButton, MenuIcon, Toolbar, Typography } from 'material';
 
-import MenuIcon from '@material-ui/icons/Menu';
-import classnames from 'classnames';
 import { Props } from './types';
-
-/*const styles = (theme: any) => ({
-  root: {
-    display: 'flex',
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-  },
-  toolbar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: '0 8px',
-    ...theme.mixins.toolbar,
-  },
-  myToolbar: {
-    padding: '0 6px',
-  },
-  headerTitle: {
-    marginLeft: 40,
-  },
-});*/
+import myStyles from './MaterialHeader.module.scss';
 
 export class MaterialHeader extends React.Component<Props> {
   //RENDER
@@ -43,7 +13,7 @@ export class MaterialHeader extends React.Component<Props> {
     return (
       <AppBar
         position="fixed"
-        className={classnames(
+        className={classNames(
           myStyles['MaterialHeader-appBar'],
           myStyles['MuiPaper-root'],
           myStyles['MuiPaper-elevation4'],
@@ -54,7 +24,7 @@ export class MaterialHeader extends React.Component<Props> {
         )}
       >
         <Toolbar
-          className={classnames(
+          className={classNames(
             myStyles['MuiToolbar-root'],
             myStyles['MuiToolbar-regular'],
             myStyles['MuiToolbar-gutters'],
@@ -68,7 +38,7 @@ export class MaterialHeader extends React.Component<Props> {
             variant="h6"
             color="inherit"
             noWrap
-            className={classnames(
+            className={classNames(
               myStyles['MuiTypography-root'],
               myStyles['MaterialHeader-headerTitle'],
               myStyles['MuiTypography-h6'],

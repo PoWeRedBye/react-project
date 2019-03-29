@@ -1,7 +1,7 @@
 import React from 'react';
 
-import settings from '../../icons/help.svg';
-import user_photo from '../../icons/user.svg';
+import settings from 'src/icons/help.svg';
+import user_photo from 'src/icons/user.svg';
 import styles from './UserProfilePage.module.scss';
 
 export class UserProfilePage extends React.Component {

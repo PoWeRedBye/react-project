@@ -1,9 +1,6 @@
 import React from 'react';
 //Material
-import IconButton from '@material-ui/core/IconButton';
-import TextField from '@material-ui/core/TextField';
-import { InputAdornment } from '@material-ui/core';
-import { Send } from '@material-ui/icons';
+import { IconButton, InputAdornment, SendIcon, TextField } from 'material';
 
 import { Props, State } from './types';
 import styles from './SearchInput.module.scss';
@@ -13,7 +10,7 @@ export class SearchInput extends React.Component<Props, State> {
     value: '',
   };
 
-  componentDidUpdate(prevProps: Props, prevState: State): void {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.state.value !== prevState.value) {
       this.props.onChange(this.state.value);
     }
@@ -46,7 +43,7 @@ export class SearchInput extends React.Component<Props, State> {
           endAdornment: (
             <InputAdornment position="end">
               <IconButton aria-label="Toggle password visibility">
-                <Send />
+                <SendIcon />
               </IconButton>
             </InputAdornment>
           ),

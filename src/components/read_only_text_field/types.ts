@@ -5,4 +5,6 @@ export interface State {
 export interface Props {
   value: any;
   fieldName: any;
+  disabled?: boolean;
+  onChange?(value: string): void;
 }

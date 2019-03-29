@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from './UserRegistration.module.scss';
 
 export class UserRegistration extends React.Component {

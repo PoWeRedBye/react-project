@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import CssBaseline from '@material-ui/core/CssBaseline';
+import { CssBaseline } from 'material';
 
 import { RootRouter } from 'src/routes/root';
 import { MaterialHeader } from 'src/components/material_mini_header';

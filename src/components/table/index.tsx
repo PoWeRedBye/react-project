@@ -4,7 +4,7 @@ import './styles.css';
 export class Table extends React.Component {
   // RENDER
 
-  render(): React.ReactNode {
+  render() {
     return (
       /* нужно разуплится с наполнением контента в табличку, сделать её пригодной для всех таблиц */
       <div>
