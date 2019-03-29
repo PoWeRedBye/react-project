@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, FormControlLabel } from 'src/proxy/material';
+import { Checkbox, FormControlLabel } from 'material';
 
 import { Props, State } from './types';
 
@@ -9,4 +9,3 @@ export class Switcher extends React.Component<Props, State> {
     return <FormControlLabel control={<Checkbox checked={checked} value="" color="secondary" />} label={label} />;
   }
 }
-

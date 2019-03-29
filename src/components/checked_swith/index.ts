@@ -1,1 +1,1 @@
-export * from './CheckedSwitcher';
+export { CheckedSwitcher } from './CheckedSwitcher';

@@ -1,1 +1,1 @@
-export * from './MaterialDrawer';
+export { MiniDrawer } from './MaterialDrawer';

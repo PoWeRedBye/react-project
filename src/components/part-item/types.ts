@@ -1,4 +1,4 @@
-import { Part } from '../../pages/CartridgeForm/types';
+import { Part } from 'src/pages/CartridgeForm/types';
 
 export interface Props extends Part {
   amount: number;

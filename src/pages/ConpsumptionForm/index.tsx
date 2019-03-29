@@ -1,11 +1,12 @@
-import * as React from 'react';
-import { Props, State } from './types';
-import { SendBtn } from 'src/components/send_btn';
+import React from 'react';
+
 import { InputChange } from 'src/types/react';
+import { SendBtn } from 'src/components/send_btn';
+import { Props, State } from './types';
 import './styles.css';
 
 export class ConsumptionForm extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     code: '',
     name: '',
     count: '',
@@ -16,43 +17,43 @@ export class ConsumptionForm extends React.Component<Props, State> {
 
   // Event handlers
 
-  private onCodeChange = (event: InputChange): void => {
+  onCodeChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ code: value }));
   };
 
-  private onNameChange = (event: InputChange): void => {
+  onNameChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ name: value }));
   };
 
-  private onCountChange = (event: InputChange): void => {
+  onCountChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ count: value }));
   };
 
-  private onInvoiceChange = (event: InputChange): void => {
+  onInvoiceChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ invoice_number: value }));
   };
 
-  private onDateChange = (event: InputChange): void => {
+  onDateChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ date: value }));
   };
 
-  private onClientChange = (event: InputChange): void => {
+  onClientChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ client: value }));
   };
 
-  private onConsumptionProductButtonClick = (): void => {
+  onConsumptionProductButtonClick = () => {
     const { code, name, count, invoice_number, date, client } = this.state;
     console.log({ code, name, count, invoice_number, date, client });
     this.setState(() => ({ code: '', name: '', count: '', invoice_number: '', date: '', client: '' }));
   };
 
-  public render(): React.ReactNode {
+  render() {
     const { code, name, count, invoice_number, date, client } = this.state;
     return (
       <form className="coming-form" role="coming-form">

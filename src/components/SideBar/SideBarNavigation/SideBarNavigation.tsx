@@ -14,6 +14,7 @@ export class SideBarNavigation extends React.Component<Props> {
       return classNames(styles.close);
     }
   };
+
   getItemClassName = () => {
     if (this.props.isOpen) {
       return classNames(styles.open_items);

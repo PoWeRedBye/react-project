@@ -1,10 +1,11 @@
-import * as React from 'react';
-import { Props, State } from './types';
+import React from 'react';
+
 import { InputChange } from 'src/types/react';
 import { SendBtn } from 'src/components/send_btn';
+import { Props, State } from './types';
 
 export class PrintersForm extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     printer_name: '',
     date: '',
     executor: '',
@@ -15,43 +16,43 @@ export class PrintersForm extends React.Component<Props, State> {
 
   // Event handlers
 
-  private onNameChange = (event: InputChange): void => {
+  onNameChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ printer_name: value }));
   };
 
-  private onDateChange = (event: InputChange): void => {
+  onDateChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ date: value }));
   };
 
-  private onExecutorChange = (event: InputChange): void => {
+  onExecutorChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ executor: value }));
   };
 
-  private onPaidFormChange = (event: InputChange): void => {
+  onPaidFormChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ paid_form: value }));
   };
 
-  private onClientChange = (event: InputChange): void => {
+  onClientChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ client: value }));
   };
 
-  private onTypeOfWorkChange = (event: InputChange): void => {
+  onTypeOfWorkChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ type_of_work: value }));
   };
 
-  private onNewRefillButtonClick = (): void => {
+  onNewRefillButtonClick = () => {
     const { printer_name, date, executor, paid_form, client, type_of_work } = this.state;
     console.log({ printer_name, date, executor, paid_form, client, type_of_work });
     this.setState(() => ({ printer_name: '', date: '', executor: '', paid_form: '', client: '', type_of_work: '' }));
   };
 
-  public render(): React.ReactNode {
+  render() {
     const { printer_name, date, executor, paid_form, client, type_of_work } = this.state;
     return (
       <form className="coming-form" role="coming-form">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from 'src/proxy/material';
+import { TextField } from 'material';
 
 import { Props, State } from './types';
 import styles from './TextField.module.scss';
@@ -19,7 +19,7 @@ export class Input extends React.Component<Props, State> {
   };
 
   render() {
-    const { value, fieldName, disabled} = this.props;
+    const { value, fieldName, disabled } = this.props;
 
     return (
       <TextField

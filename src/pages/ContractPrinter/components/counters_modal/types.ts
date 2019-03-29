@@ -4,6 +4,7 @@ export interface Props {
   className?: string;
   serialNumber: string;
 }
+
 export interface State {
   value: string;
   printer_serial_number: string;

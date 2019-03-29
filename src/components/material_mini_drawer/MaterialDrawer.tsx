@@ -1,8 +1,8 @@
 import React from 'react';
-// Material:
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, InboxIcon, MailIcon } from 'src/proxy/material';
-import { withStyles } from '@material-ui/core/styles';
 import classNames from 'classnames';
+// Material:
+import { Drawer, InboxIcon, List, ListItem, ListItemIcon, ListItemText, MailIcon } from 'material';
+import { withStyles } from '@material-ui/core/styles';
 
 import { Props, State } from './types';
 

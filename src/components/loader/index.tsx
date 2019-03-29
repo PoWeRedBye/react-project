@@ -1,16 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 
 import { Props } from './types';
 import './styles.css';
 
 export class Loader extends React.Component<Props> {
-  public static defaultProps = {
+  static defaultProps: Partial<Props> = {
     show: true,
   };
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render() {
     if (!this.props.show) {
       return null;
     }

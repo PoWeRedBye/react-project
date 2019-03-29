@@ -1,5 +1,5 @@
 // TODO: move to separate file
-import { AnyObject } from '../../types/common';
+import { AnyObject } from 'src/types/common';
 
 export interface Props {
   classes: AnyObject;

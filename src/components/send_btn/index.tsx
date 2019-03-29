@@ -1,5 +1,5 @@
 import React from 'react';
-import merge from 'classnames';
+import classNames from 'classnames';
 
 import { Props, State } from './types';
 import './styles.css';
@@ -11,12 +11,12 @@ export class SendBtn extends React.Component<Props, State> {
 
   // RENDER
 
-  render(): React.ReactNode {
+  render() {
     const { children, onClick } = this.props;
     const { loading } = this.state;
 
     return (
-      <a className={merge('send-btn', { loading })} onClick={onClick}>
+      <a className={classNames('send-btn', { loading })} onClick={onClick}>
         {children}
       </a>
     );

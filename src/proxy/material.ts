@@ -1,10 +1,13 @@
+import MaterialCssBaseline from '@material-ui/core/CssBaseline';
+export const CssBaseline = MaterialCssBaseline;
+
 //Card
-import MaterialCard  from "@material-ui/core/Card";
+import MaterialCard from '@material-ui/core/Card';
 export const Card = MaterialCard;
 import MaterialCardContent from '@material-ui/core/CardContent';
 export const CardContent = MaterialCardContent;
 //Dialog
-import MaterialDialog from "@material-ui/core/Dialog";
+import MaterialDialog from '@material-ui/core/Dialog';
 export const Dialog = MaterialDialog;
 //List
 import MaterialList from '@material-ui/core/List';
@@ -49,8 +52,13 @@ export const MoreVertIcon = MaterialMoreVertIcon;
 import MaterialDrawer from '@material-ui/core/Drawer';
 export const Drawer = MaterialDrawer;
 
+import MaterialInputAdornment from '@material-ui/core/InputAdornment';
+export const InputAdornment = MaterialInputAdornment;
+
 //Icons
 import MaterialInboxIcon from '@material-ui/icons/MoveToInbox';
 export const InboxIcon = MaterialInboxIcon;
 import MaterialMailIcon from '@material-ui/icons/Mail';
 export const MailIcon = MaterialMailIcon;
+import MaterialSendIcon from '@material-ui/icons/Send';
+export const SendIcon = MaterialSendIcon;

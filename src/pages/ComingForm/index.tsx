@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 
 import { InputChange } from 'src/types/react';
 import { SendBtn } from 'src/components/send_btn';
 import { Props, State } from './types';
 
 export class ComingForm extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     code: '',
     name: '',
     amount: '',
@@ -15,32 +15,32 @@ export class ComingForm extends React.Component<Props, State> {
 
   // Event handlers
 
-  private onCodeChange = (event: InputChange): void => {
+  onCodeChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ code: value }));
   };
 
-  private onNameChange = (event: InputChange): void => {
+  onNameChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ name: value }));
   };
 
-  private onAmountChange = (event: InputChange): void => {
+  onAmountChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ amount: value }));
   };
 
-  private onInvoiceChange = (event: InputChange): void => {
+  onInvoiceChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ invoice: value }));
   };
 
-  private onDateChange = (event: InputChange): void => {
+  onDateChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ date: value }));
   };
 
-  private onComingProductButtonClick = (): void => {
+  onComingProductButtonClick = () => {
     const { code, name, amount, invoice, date } = this.state;
     console.log({ code, name, amount, invoice, date });
     this.setState(() => ({ code: '', name: '', amount: '', invoice: '', date: '' }));
@@ -48,7 +48,7 @@ export class ComingForm extends React.Component<Props, State> {
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render() {
     const { code, name, amount, invoice, date } = this.state;
 
     return (

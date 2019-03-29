@@ -1,4 +1,4 @@
-import { PrintersCounter } from '../../../../types/models';
+import { PrintersCounter } from 'src/types/models';
 
 export interface Props {
   items?: PrintersCounter[];

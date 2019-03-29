@@ -1,6 +1,5 @@
 import React from 'react';
-//Material
-import { AppBar, Toolbar, IconButton, MenuIcon, Typography, Button, MoreVertIcon } from 'src/proxy/material';
+import { AppBar, Button, IconButton, MenuIcon, MoreVertIcon, Toolbar, Typography } from 'material';
 
 import user_image from 'src/icons/user.svg';
 import { Props } from './types';

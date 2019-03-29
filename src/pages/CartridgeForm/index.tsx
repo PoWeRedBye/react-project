@@ -1,17 +1,17 @@
-import * as React from 'react';
-import merge from 'classnames';
+import React from 'react';
+import classNames from 'classnames';
 
 import { AnyFunction } from 'src/types/common';
 import { InputChange } from 'src/types/react';
 import { SendBtn } from 'src/components/send_btn';
 import { PartItem } from 'src/components/part-item';
-// import { PartsModal } from '../../components/parts-modal';
+// import { PartsModal } from 'src/components/parts-modal';
 import { HardcodedParts } from './hardcoded-data';
 import { Part, Props, State } from './types';
 import './styles.css';
 
 export class CartridgeForm extends React.Component<Props, State> {
-  public state: State = {
+  state: State = {
     cartridge_name: '',
     date: '',
     executor: '',
@@ -27,11 +27,11 @@ export class CartridgeForm extends React.Component<Props, State> {
   // Component variables
 
   // @ts-ignore
-  private partsListReference: HTMLDivElement;
+  partsListReference: HTMLDivElement;
 
   // Component lifecycle methods
 
-  public componentDidUpdate(prevProps: Props, prevState: State) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (this.state.selectedParts.length > prevState.selectedParts.length && this.partsListReference) {
       this.partsListReference.scrollTop = this.partsListReference.scrollHeight;
     }
@@ -39,47 +39,47 @@ export class CartridgeForm extends React.Component<Props, State> {
 
   // Event handlers
 
-  private onNameChange = (event: InputChange): void => {
+  onNameChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ cartridge_name: value }));
   };
 
-  private onDateChange = (event: InputChange): void => {
+  onDateChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ date: value }));
   };
 
-  private onExecutorChange = (event: InputChange): void => {
+  onExecutorChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ executor: value }));
   };
 
-  private onPaidFormChange = (event: InputChange): void => {
+  onPaidFormChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ paid_form: value }));
   };
 
-  private onClientChange = (event: InputChange): void => {
+  onClientChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ client: value }));
   };
 
-  private onTypeOfWorkChange = (event: InputChange): void => {
+  onTypeOfWorkChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ type_of_work: value }));
   };
 
-  private onNewRefillButtonClick = (): void => {
+  onNewRefillButtonClick = () => {
     const { cartridge_name, date, executor, paid_form, client, type_of_work } = this.state;
     console.log({ cartridge_name, date, executor, paid_form, client, type_of_work });
     this.setState(() => ({ cartridge_name: '', date: '', executor: '', paid_form: '', client: '', type_of_work: '' }));
   };
 
-  private toggleModal = (): void => {
+  toggleModal = () => {
     this.setState((prevState: State) => ({ modalIsOpen: !prevState.modalIsOpen }));
   };
 
-  private onAddPartsClick = (targetPart: Part): AnyFunction => (): void => {
+  onAddPartsClick = (targetPart: Part): AnyFunction => () => {
     this.setState((prevState: State) => ({
       modalIsOpen: false,
       shownAvailableParts: prevState.shownAvailableParts.map(
@@ -90,7 +90,7 @@ export class CartridgeForm extends React.Component<Props, State> {
     }));
   };
 
-  // private onAddPartsClick2 = (targetPart: Part) : AnyFunction => () : void => {
+  // onAddPartsClick2 = (targetPart: Part) : AnyFunction => ()  => {
   //   this.setState((prevState: State) => {
   //     const newSelectedParts = prevState.selectedParts.slice(); // es6 => [...prevState.selectedParts]
   //     newSelectedParts.push(targetPart);
@@ -115,7 +115,7 @@ export class CartridgeForm extends React.Component<Props, State> {
   //
   //   })
   // };
-  private onPartAmountChange = (code: string, amount: number): void => {
+  onPartAmountChange = (code: string, amount: number) => {
     this.setState((prevState: State) => ({
       selectedParts: prevState.selectedParts.map(
         (part: Part): Part => (part.code === code ? { ...part, amount } : part),
@@ -123,7 +123,7 @@ export class CartridgeForm extends React.Component<Props, State> {
     }));
   };
 
-  private onPartDelete = (targetPart: Part): AnyFunction => (): void => {
+  onPartDelete = (targetPart: Part): AnyFunction => () => {
     this.setState((prevState: State) => ({
       selectedParts: prevState.selectedParts.filter((part: Part): boolean => part.id !== targetPart.id),
       shownAvailableParts: prevState.shownAvailableParts.map(
@@ -134,7 +134,7 @@ export class CartridgeForm extends React.Component<Props, State> {
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render() {
     const {
       selectedParts,
       shownAvailableParts,
@@ -174,7 +174,7 @@ export class CartridgeForm extends React.Component<Props, State> {
         <div className="parts-container">
           <button onClick={this.toggleModal}>Add parts</button>
           <div
-            className={merge('parts-list', { bordered: selectedParts.length })}
+            className={classNames('parts-list', { bordered: selectedParts.length })}
             ref={(div: HTMLDivElement) => {
               this.partsListReference = div;
             }}

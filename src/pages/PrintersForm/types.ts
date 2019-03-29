@@ -1,4 +1,5 @@
 export interface Props {}
+
 export interface State {
   printer_name: string;
   date: string;

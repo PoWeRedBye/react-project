@@ -1,6 +1,6 @@
 import React from 'react';
 //Material
-import {List, ListItem} from 'src/proxy/material';
+import { List, ListItem } from 'material';
 
 import { Switcher } from 'src/components/non_checked_switch';
 import { Input } from 'src/components/read_only_text_field';
