@@ -2,13 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 //Material
 import { Card } from 'src/proxy/material';
-
 import { Input } from 'src/components/read_only_text_field';
-import { CountersList } from '../counters_list';
 
+import { CountersList } from '../counters_list';
+import { CountersModal } from '../counters_modal';
 import { Props, State } from './types';
 import styles from './PrinterInfo.module.scss';
-import { CountersModal } from '../counters_modal';
 
 export class PrinterInfo extends React.Component<Props, State> {
   state: State = {

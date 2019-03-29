@@ -1,11 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 //Material
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import { Card, CardContent } from 'src/proxy/material';
+import { SearchInput } from 'src/components/search_input';
+import { ListComponent } from 'src/components/list';
 
-import { SearchInput } from '../../../../components/search_input';
-import { ListComponent } from '../../../../components/list';
 import { Props } from './types';
 import styles from './PrintersList.module.scss';
 

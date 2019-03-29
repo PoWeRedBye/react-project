@@ -1,6 +1,8 @@
 //Card
 import MaterialCard  from "@material-ui/core/Card";
 export const Card = MaterialCard;
+import MaterialCardContent from '@material-ui/core/CardContent';
+export const CardContent = MaterialCardContent;
 //Dialog
 import MaterialDialog from "@material-ui/core/Dialog";
 export const Dialog = MaterialDialog;
