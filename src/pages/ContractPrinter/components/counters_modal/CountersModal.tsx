@@ -11,6 +11,8 @@ import styles from './CountersModal.module.scss';
 import { ServerResponse } from 'src/types/server';
 import { Printer } from 'src/types/models';
 import { addContractPrinterCounters, getContractPrinters } from 'src/endpoints/printer/contract';
+import { reject } from "q";
+import { resolve } from "dns";
 
 export class CountersModal extends React.Component<Props, State> {
   state: State = {
@@ -30,27 +32,28 @@ export class CountersModal extends React.Component<Props, State> {
   };
 
   //TODO {Maxim Ozarovskiy}: create on all checker separate handler method!!!
+  //TODO {Maxim OZarovskit}: ***** bug, with uncheck checkbox
   cartridgeOnChange = (value: boolean) => {
-    this.setState({ new_cartridge: value });
+    this.setState({ new_cartridge: !value });
   };
   fixUnitOnChange = (value: boolean) => {
-    this.setState({ new_fix_unit: value });
+    this.setState({ new_fix_unit: !value });
   };
   nodeOnChange = (value: boolean) => {
-    this.setState({ new_oscillatory_node: value });
+    this.setState({ new_oscillatory_node: !value });
   };
   rollershOnChange = (value: boolean) => {
-    this.setState({ new_rollers: value });
+    this.setState({ new_rollers: !value });
   };
   maintenanceOnChange = (value: boolean) => {
-    this.setState({ new_maintenance: value });
+    this.setState({ new_maintenance: !value });
   };
   norhingOnChange = (value: boolean) => {
-    this.setState({ nothing: value });
+    this.setState({ nothing: !value });
   };
 
   //TODO {Maxim Ozarovskiy}: ***** 11
-  addNewPrinterCounterToTheServer = async (counter: number = this.state.counter):Promise<void> => {
+  addNewPrinterCounterToTheServer = async (/*counter: number = this.state.counter*/) => {
     const printer_serial_number = this.props.serialNumber;
     const {
       new_cartridge,
@@ -59,7 +62,27 @@ export class CountersModal extends React.Component<Props, State> {
       new_oscillatory_node,
       new_rollers,
       nothing,
+      counter
     } = this.state;
+    new Promise(async(resolve, reject) => {
+      const response: ServerResponse<Printer[]> = await addContractPrinterCounters({
+        printer_serial_number,
+        counter,
+        new_cartridge,
+        new_fix_unit,
+        new_maintenance,
+        new_oscillatory_node,
+        new_rollers,
+        nothing });
+
+      this.setState(() => {console.log(response.data.payload)});
+      if (response.status === 200) {
+        console.log(response.data);
+        resolve( {message:response.data.payload})
+      } else {
+        reject(response.status);
+      }
+    });
     const response: ServerResponse<Printer[]> = await addContractPrinterCounters({
       printer_serial_number,
       counter,
