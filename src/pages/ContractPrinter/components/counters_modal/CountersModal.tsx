@@ -8,6 +8,9 @@ import { CheckedSwitcher } from 'src/components/checked_swith';
 
 import { Props, State } from './types';
 import styles from './CountersModal.module.scss';
+import { ServerResponse } from 'src/types/server';
+import { Printer } from 'src/types/models';
+import { addContractPrinterCounters, getContractPrinters } from 'src/endpoints/printer/contract';
 
 export class CountersModal extends React.Component<Props, State> {
   state: State = {
@@ -27,7 +30,7 @@ export class CountersModal extends React.Component<Props, State> {
   };
 
   //TODO {Maxim Ozarovskiy}: create on all checker separate handler method!!!
-  cartrigdeOnChange = (value: boolean) => {
+  cartridgeOnChange = (value: boolean) => {
     this.setState({ new_cartridge: value });
   };
   fixUnitOnChange = (value: boolean) => {
@@ -46,8 +49,29 @@ export class CountersModal extends React.Component<Props, State> {
     this.setState({ nothing: value });
   };
 
-  //TODO {Maxim Ozarovskiy}: call api axios method!!!
-  addNewPrinterCounterToTheServer = () => {};
+  //TODO {Maxim Ozarovskiy}: *****
+  addNewPrinterCounterToTheServer = async (counter: number = this.state.counter):Promise<void> => {
+    const printer_serial_number = this.props.serialNumber;
+    const {
+      new_cartridge,
+      new_fix_unit,
+      new_maintenance,
+      new_oscillatory_node,
+      new_rollers,
+      nothing,
+    } = this.state;
+    const response: ServerResponse<Printer[]> = await addContractPrinterCounters({
+      printer_serial_number,
+      counter,
+      new_cartridge,
+      new_fix_unit,
+      new_maintenance,
+      new_oscillatory_node,
+      new_rollers,
+      nothing });
+
+    this.setState(() => {console.log(response.data.payload)});
+  };
 
   //RENDER
   render() {
@@ -57,18 +81,11 @@ export class CountersModal extends React.Component<Props, State> {
       <Dialog open={open} onClose={handleClose}>
         <Card className={styles.modal} classes={{ root: classNames(className) }}>
           <div className={styles.flex_row}>
-            <Input value={this.state.counter} fieldName="fu" onChange={this.onChange} />
+            <Input value={this.state.counter} fieldName="New Counter:" onChange={this.onChange} />
             <div>
               <div className={styles.flex_row_1}>
-                <CheckedSwitcher
-                  onChange={this.cartrigdeOnChange}
-                  value={new_cartridge}
-                  label="new cartridge"
-                />
-                <CheckedSwitcher
-                  onChange={this.fixUnitOnChange}
-                  value={new_fix_unit}
-                  label="new fix unit" />
+                <CheckedSwitcher onChange={this.cartridgeOnChange} value={new_cartridge} label="new cartridge" />
+                <CheckedSwitcher onChange={this.fixUnitOnChange} value={new_fix_unit} label="new fix unit" />
                 <CheckedSwitcher
                   onChange={this.nodeOnChange}
                   value={new_oscillatory_node}
@@ -76,21 +93,12 @@ export class CountersModal extends React.Component<Props, State> {
                 />
               </div>
               <div className={styles.flex_row_2}>
-                <CheckedSwitcher
-                  onChange={this.rollershOnChange}
-                  value={new_rollers}
-                  label="new rollers" />
-                <CheckedSwitcher
-                  onChange={this.maintenanceOnChange}
-                  value={new_maintenance}
-                  label="maintenance" />
-                <CheckedSwitcher
-                  onChange={this.norhingOnChange}
-                  value={nothing}
-                  label="you know nothing John Snow" />
+                <CheckedSwitcher onChange={this.rollershOnChange} value={new_rollers} label="new rollers" />
+                <CheckedSwitcher onChange={this.maintenanceOnChange} value={new_maintenance} label="maintenance" />
+                <CheckedSwitcher onChange={this.norhingOnChange} value={nothing} label="you know nothing John Snow" />
               </div>
             </div>
-            <h2 className={styles['component-btn']} onClick={() => {}}>
+            <h2 className={styles['component-btn']} onClick={this.addNewPrinterCounterToTheServer}>
               Send
             </h2>
           </div>
