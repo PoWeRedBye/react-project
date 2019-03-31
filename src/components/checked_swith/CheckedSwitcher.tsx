@@ -1,7 +1,7 @@
 import React from 'react';
-import { Checkbox, FormControlLabel } from 'src/proxy/material';
+import { Checkbox, FormControlLabel } from 'material';
 
-import { Props} from './types';
+import { Props } from './types';
 
 export class CheckedSwitcher extends React.Component<Props> {
   onChange = (event: React.ChangeEvent<HTMLInputElement>) => {

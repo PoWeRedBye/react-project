@@ -1,7 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 // Material imports:
-import {AppBar ,Toolbar ,Typography , IconButton, MenuIcon} from 'src/proxy/material';
-import classnames from 'classnames';
+import { AppBar, IconButton, MenuIcon, Toolbar, Typography } from 'material';
 
 import { Props } from './types';
 import myStyles from './MaterialHeader.module.scss';
@@ -13,7 +13,7 @@ export class MaterialHeader extends React.Component<Props> {
     return (
       <AppBar
         position="fixed"
-        className={classnames(
+        className={classNames(
           myStyles['MaterialHeader-appBar'],
           myStyles['MuiPaper-root'],
           myStyles['MuiPaper-elevation4'],
@@ -24,7 +24,7 @@ export class MaterialHeader extends React.Component<Props> {
         )}
       >
         <Toolbar
-          className={classnames(
+          className={classNames(
             myStyles['MuiToolbar-root'],
             myStyles['MuiToolbar-regular'],
             myStyles['MuiToolbar-gutters'],
@@ -38,7 +38,7 @@ export class MaterialHeader extends React.Component<Props> {
             variant="h6"
             color="inherit"
             noWrap
-            className={classnames(
+            className={classNames(
               myStyles['MuiTypography-root'],
               myStyles['MaterialHeader-headerTitle'],
               myStyles['MuiTypography-h6'],

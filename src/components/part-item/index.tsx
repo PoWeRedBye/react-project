@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 
 import { InputChange } from 'src/types/react';
 import { Props, State } from './types';
 import './styles.css';
 
 export class PartItem extends React.Component<Props, State> {
-  public constructor(props: Props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       amount: props.amount || 1,
@@ -14,19 +14,19 @@ export class PartItem extends React.Component<Props, State> {
 
   // Event handler
 
-  private onAmountChange = (event: InputChange): void => {
+  onAmountChange = (event: InputChange) => {
     const { value } = event.target;
     this.setState(() => ({ amount: +value }));
     this.notifyParent(+value);
   };
 
-  private onAmountIncrement = (): void => {
+  onAmountIncrement = () => {
     const { amount } = this.state;
     this.setState(() => ({ amount: amount + 1 }));
     this.notifyParent(amount + 1);
   };
 
-  private onAmountDecrement = (): void => {
+  onAmountDecrement = () => {
     const { amount } = this.state;
     if (amount) {
       this.setState(() => ({ amount: amount - 1 }));
@@ -36,13 +36,13 @@ export class PartItem extends React.Component<Props, State> {
 
   // Helper functions
 
-  private notifyParent = (amount: number): void => {
+  notifyParent = (amount: number) => {
     this.props.onAmountChange(this.props.code, amount);
   };
 
   // RENDER
 
-  public render(): React.ReactNode {
+  render() {
     const { name, code, onDelete } = this.props;
     const { amount } = this.state;
 

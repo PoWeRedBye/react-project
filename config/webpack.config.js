@@ -246,6 +246,7 @@ module.exports = function(webpackEnv) {
         'react-native': 'react-native-web',
         // Custom folder aliases
         src: paths.appSrc,
+        material: `${paths.appSrc}/proxy/material`,
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

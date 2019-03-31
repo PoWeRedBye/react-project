@@ -1,6 +1,6 @@
 import React from 'react';
 //Material
-import { List, ListItem, ListItemText } from 'src/proxy/material';
+import { List, ListItem, ListItemText } from 'material';
 
 import { Props } from './types';
 import styles from './ListComponent.module.scss';

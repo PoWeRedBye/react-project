@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 //Material
-import { Card } from 'src/proxy/material';
+import { Card } from 'material';
 import { Input } from 'src/components/read_only_text_field';
 
 import { CountersList } from '../counters_list';
@@ -14,7 +14,7 @@ export class PrinterInfo extends React.Component<Props, State> {
     modalIsOpen: false,
   }; // а этот стейт тебе точно нужен?
 
-  private toggleModal = (): void => {
+  toggleModal = () => {
     this.setState((prevState: State) => ({ modalIsOpen: !prevState.modalIsOpen }));
   };
 

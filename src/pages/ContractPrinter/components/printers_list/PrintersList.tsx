@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 //Material
-import { Card, CardContent } from 'src/proxy/material';
+import { Card, CardContent } from 'material';
+
 import { SearchInput } from 'src/components/search_input';
 import { ListComponent } from 'src/components/list';
 

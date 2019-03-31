@@ -1,1 +1,1 @@
-export * from './CountersList';
+export { CountersList } from './CountersList';
