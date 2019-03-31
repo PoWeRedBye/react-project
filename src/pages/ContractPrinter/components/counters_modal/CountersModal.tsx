@@ -49,7 +49,7 @@ export class CountersModal extends React.Component<Props, State> {
     this.setState({ nothing: value });
   };
 
-  //TODO {Maxim Ozarovskiy}: *****
+  //TODO {Maxim Ozarovskiy}: ***** 11
   addNewPrinterCounterToTheServer = async (counter: number = this.state.counter):Promise<void> => {
     const printer_serial_number = this.props.serialNumber;
     const {
