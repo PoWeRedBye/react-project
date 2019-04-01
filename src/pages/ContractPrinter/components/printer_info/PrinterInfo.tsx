@@ -3,6 +3,7 @@ import classNames from 'classnames';
 //Material
 import { Card } from 'material';
 import { Input } from 'src/components/read_only_text_field';
+import { ContractPrintersCounter } from 'src/endpoints/printer/contract/types';
 
 import { CountersList } from '../counters_list';
 import { CountersModal } from '../counters_modal';
@@ -16,6 +17,13 @@ export class PrinterInfo extends React.Component<Props, State> {
 
   toggleModal = () => {
     this.setState((prevState: State) => ({ modalIsOpen: !prevState.modalIsOpen }));
+  };
+
+  onCountersModalSendButtonClick = (payload: ContractPrintersCounter) => {
+    // Скрываем модалку
+    this.setState({ modalIsOpen: false });
+    // Отдаём данные паренту, который будет делать запрос с ними
+    this.props.onAddNewCounterToPrinter(payload);
   };
 
   //RENDER
@@ -53,6 +61,7 @@ export class PrinterInfo extends React.Component<Props, State> {
         <CountersModal
           open={this.state.modalIsOpen}
           handleClose={this.toggleModal}
+          handleSubmit={this.onCountersModalSendButtonClick}
           serialNumber={printer_serial_number}
         />
       </Card>

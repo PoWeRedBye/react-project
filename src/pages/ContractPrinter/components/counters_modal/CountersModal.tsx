@@ -8,53 +8,62 @@ import { CheckedSwitcher } from 'src/components/checked_swith';
 
 import { Props, State } from './types';
 import styles from './CountersModal.module.scss';
-import { ServerResponse } from 'src/types/server';
-import { Printer } from 'src/types/models';
-import { addContractPrinterCounters, getContractPrinters } from 'src/endpoints/printer/contract';
-import { reject } from "q";
-import { resolve } from "dns";
+
+const InitialState: State = {
+  value: '',
+  printer_serial_number: '',
+  counter: 0,
+  new_cartridge: false,
+  new_fix_unit: false,
+  new_oscillatory_node: false,
+  new_rollers: false,
+  new_maintenance: false,
+  nothing: false,
+};
 
 export class CountersModal extends React.Component<Props, State> {
-  state: State = {
-    value: '',
-    printer_serial_number: '',
-    counter: 0,
-    new_cartridge: false,
-    new_fix_unit: false,
-    new_oscillatory_node: false,
-    new_rollers: false,
-    new_maintenance: false,
-    nothing: false,
+  static getDerivedStateFromProps = (props: Props): Partial<State> | null => {
+    // Если модалка закрылась - сделать текущий стейт изначальным
+    if (!props.open) {
+      return InitialState;
+    }
+
+    // Иначе ничего не делаем
+    return null;
   };
+
+  state: State = InitialState;
 
   onChange = (value: string) => {
     this.setState({ counter: +value.replace(/[^0-9]/, '') });
   };
 
-  //TODO {Maxim Ozarovskiy}: create on all checker separate handler method!!!
-  //TODO {Maxim OZarovskit}: ***** bug, with uncheck checkbox
-  cartridgeOnChange = (value: boolean) => {
-    this.setState({ new_cartridge: !value });
-  };
-  fixUnitOnChange = (value: boolean) => {
-    this.setState({ new_fix_unit: !value });
-  };
-  nodeOnChange = (value: boolean) => {
-    this.setState({ new_oscillatory_node: !value });
-  };
-  rollershOnChange = (value: boolean) => {
-    this.setState({ new_rollers: !value });
-  };
-  maintenanceOnChange = (value: boolean) => {
-    this.setState({ new_maintenance: !value });
-  };
-  norhingOnChange = (value: boolean) => {
-    this.setState({ nothing: !value });
+  cartridgeOnChange = (new_cartridge: boolean) => {
+    this.setState({ new_cartridge });
   };
 
-  //TODO {Maxim Ozarovskiy}: ***** 11
-  addNewPrinterCounterToTheServer = async (/*counter: number = this.state.counter*/) => {
-    const printer_serial_number = this.props.serialNumber;
+  fixUnitOnChange = (new_fix_unit: boolean) => {
+    this.setState({ new_fix_unit });
+  };
+
+  nodeOnChange = (new_oscillatory_node: boolean) => {
+    this.setState({ new_oscillatory_node });
+  };
+
+  rollersOnChange = (new_rollers: boolean) => {
+    this.setState({ new_rollers });
+  };
+
+  maintenanceOnChange = (new_maintenance: boolean) => {
+    this.setState({ new_maintenance });
+  };
+
+  nothingOnChange = (nothing: boolean) => {
+    this.setState({ nothing });
+  };
+
+  addNewPrinterCounterToTheServer = () => {
+    const { serialNumber: printer_serial_number } = this.props;
     const {
       new_cartridge,
       new_fix_unit,
@@ -62,43 +71,27 @@ export class CountersModal extends React.Component<Props, State> {
       new_oscillatory_node,
       new_rollers,
       nothing,
-      counter
-    } = this.state;
-    new Promise(async(resolve, reject) => {
-      const response: ServerResponse<Printer[]> = await addContractPrinterCounters({
-        printer_serial_number,
-        counter,
-        new_cartridge,
-        new_fix_unit,
-        new_maintenance,
-        new_oscillatory_node,
-        new_rollers,
-        nothing });
-
-      this.setState(() => {console.log(response.data.payload)});
-      if (response.status === 200) {
-        console.log(response.data);
-        resolve( {message:response.data.payload})
-      } else {
-        reject(response.status);
-      }
-    });
-    const response: ServerResponse<Printer[]> = await addContractPrinterCounters({
-      printer_serial_number,
       counter,
+    } = this.state;
+
+    // Валидация данных тут если нужно
+
+    // Если валидация прошла - отдать данные паренту
+    this.props.handleSubmit({
+      printer_serial_number,
       new_cartridge,
       new_fix_unit,
       new_maintenance,
       new_oscillatory_node,
       new_rollers,
-      nothing });
-
-    this.setState(() => {console.log(response.data.payload)});
+      nothing,
+      counter,
+    });
   };
 
   //RENDER
   render() {
-    const { handleClose, className, open, serialNumber } = this.props;
+    const { handleClose, className, open } = this.props;
     const { new_cartridge, new_fix_unit, new_oscillatory_node, new_rollers, new_maintenance, nothing } = this.state;
     return (
       <Dialog open={open} onClose={handleClose}>
@@ -116,9 +109,9 @@ export class CountersModal extends React.Component<Props, State> {
                 />
               </div>
               <div className={styles.flex_row_2}>
-                <CheckedSwitcher onChange={this.rollershOnChange} value={new_rollers} label="new rollers" />
+                <CheckedSwitcher onChange={this.rollersOnChange} value={new_rollers} label="new rollers" />
                 <CheckedSwitcher onChange={this.maintenanceOnChange} value={new_maintenance} label="maintenance" />
-                <CheckedSwitcher onChange={this.norhingOnChange} value={nothing} label="you know nothing John Snow" />
+                <CheckedSwitcher onChange={this.nothingOnChange} value={nothing} label="you know nothing John Snow" />
               </div>
             </div>
             <h2 className={styles['component-btn']} onClick={this.addNewPrinterCounterToTheServer}>

@@ -5,11 +5,12 @@ import { Props } from './types';
 
 export class CheckedSwitcher extends React.Component<Props> {
   onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.props.onChange(Boolean(event.target.value));
+    this.props.onChange(event.target.checked);
   };
 
   render() {
     const { label, value } = this.props;
+
     return (
       <FormControlLabel
         label={label}

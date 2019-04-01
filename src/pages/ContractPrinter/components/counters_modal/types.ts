@@ -1,6 +1,9 @@
+import { ContractPrintersCounter } from 'src/endpoints/printer/contract/types';
+
 export interface Props {
   open: boolean;
   handleClose(): void;
+  handleSubmit(payload: ContractPrintersCounter): void;
   className?: string;
   serialNumber: string;
 }

@@ -4,8 +4,9 @@ import debounce from 'lodash/debounce';
 // Import global constants | types | services | models/modules/containers | components | styles
 import { DEFAULT_LIMIT } from 'src/constants';
 import { ServerResponse } from 'src/types/server';
+import { ContractPrintersCounter } from 'src/endpoints/printer/contract/types';
 import { Printer } from 'src/types/models';
-import { getContractPrinters } from 'src/endpoints/printer/contract';
+import { addContractPrinterCounters, getContractPrinters } from 'src/endpoints/printer/contract';
 // Local -//-//-
 import { PrintersList } from './components/printers_list';
 import { PrinterInfo } from './components/printer_info';
@@ -49,6 +50,15 @@ export class ContractPrinter extends React.Component<Props, State> {
   };
   //</editor-fold>
 
+  addNewCounterToPrinter = async (payload: ContractPrintersCounter) => {
+    // Поменять `data: any` на правильную типизацию
+    const response: ServerResponse<Printer> = await addContractPrinterCounters(payload);
+    // В респонсе по идее придёт обновлённый принтер
+    // засетать этот принтер в state.selectedPrinter
+    // обновить соответствующий принтер в state.printersList
+    // показать тоаст?
+  };
+
   //RENDER
 
   render() {
@@ -63,7 +73,11 @@ export class ContractPrinter extends React.Component<Props, State> {
           onPrinterSelect={this.onPrinterSelect}
         />
 
-        <PrinterInfo className={styles.printer_info} printer={selectedPrinter} />
+        <PrinterInfo
+          className={styles.printer_info}
+          printer={selectedPrinter}
+          onAddNewCounterToPrinter={this.addNewCounterToPrinter}
+        />
       </div>
     );
   }
