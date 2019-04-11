@@ -5,7 +5,10 @@ import { Snackbar } from 'material';
 import { Props } from './types';
 
 export class Toast extends React.Component<Props> {
+  //RENDER
   render() {
+    const { open, message, handleClose } = this.props;
+
     return (
       <Snackbar
         anchorOrigin={{
@@ -16,9 +19,9 @@ export class Toast extends React.Component<Props> {
         ContentProps={{
           'aria-describedby': 'message-id',
         }}
-        open={this.props.open}
-        message={<span>{this.props.message}</span>}
-        onClose={this.props.handleClose}
+        open={open}
+        message={<span>{message}</span>}
+        onClose={handleClose}
       />
     );
   }
