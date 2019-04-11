@@ -1,27 +1,20 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-import { Snackbar } from "material";
+import { Snackbar } from 'material';
+import { Props } from './types';
 
-import { Props } from './types'
-
-export class Toast extends React.Component<Props> {
-  // LOLWOOT
-  render(){
-    return(
-      <Snackbar
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
-        }}
-        autoHideDuration={6000}
-        ContentProps={{
-          'aria-describedby': 'message-id',
-        }}
-
-        open={this.props.open}
-        message={<span>{this.props.message}</span>}
-        onClose={this.props.handleClose}
-      />
-    );
-  }
-}
+export const Toast: FunctionComponent<Props> = props => (
+  <Snackbar
+    anchorOrigin={{
+      vertical: 'bottom',
+      horizontal: 'left',
+    }}
+    autoHideDuration={6000}
+    ContentProps={{
+      'aria-describedby': 'message-id',
+    }}
+    open={props.open}
+    message={<span>{props.message}</span>}
+    onClose={props.handleClose}
+  />
+);
