@@ -63,7 +63,7 @@ export class PrinterInfo extends React.Component<Props, State> {
           handleClose={this.toggleModal}
           handleSubmit={this.onCountersModalSendButtonClick}
           serialNumber={printer_serial_number}
-        />
+         />
       </Card>
     );
   }

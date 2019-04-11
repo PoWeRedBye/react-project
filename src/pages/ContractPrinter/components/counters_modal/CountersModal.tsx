@@ -114,7 +114,7 @@ export class CountersModal extends React.Component<Props, State> {
                 <CheckedSwitcher onChange={this.nothingOnChange} value={nothing} label="you know nothing John Snow" />
               </div>
             </div>
-            <h2 className={styles['component-btn']} onClick={this.addNewPrinterCounterToTheServer}>
+            <h2 className={styles.component_btn} onClick={this.addNewPrinterCounterToTheServer}>
               Send
             </h2>
           </div>

@@ -7,4 +7,8 @@ export interface State {
   selectedPrinter: Printer | null;
   limit: number;
   page: number;
+  toastMessage: string;
+  toastIsOpen: boolean;
 }
+
+

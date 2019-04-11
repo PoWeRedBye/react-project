@@ -55,6 +55,9 @@ export const Drawer = MaterialDrawer;
 import MaterialInputAdornment from '@material-ui/core/InputAdornment';
 export const InputAdornment = MaterialInputAdornment;
 
+import MaterialSnackbar from '@material-ui/core/Snackbar';
+export const Snackbar = MaterialSnackbar;
+
 //Icons
 import MaterialInboxIcon from '@material-ui/icons/MoveToInbox';
 export const InboxIcon = MaterialInboxIcon;

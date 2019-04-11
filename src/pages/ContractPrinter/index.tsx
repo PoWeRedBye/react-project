@@ -12,6 +12,7 @@ import { PrintersList } from './components/printers_list';
 import { PrinterInfo } from './components/printer_info';
 import { Props, State } from './types';
 import styles from './ContractPrinter.module.scss';
+import { Toast } from 'src/components/toast';
 
 export class ContractPrinter extends React.Component<Props, State> {
   state: State = {
@@ -19,6 +20,8 @@ export class ContractPrinter extends React.Component<Props, State> {
     selectedPrinter: null,
     limit: DEFAULT_LIMIT,
     page: 1,
+    toastIsOpen: false,
+    toastMessage: '',
   };
 
   //<editor-fold desc="Component lifecycle methods">
@@ -51,12 +54,36 @@ export class ContractPrinter extends React.Component<Props, State> {
   //</editor-fold>
 
   addNewCounterToPrinter = async (payload: ContractPrintersCounter) => {
-    // Поменять `data: any` на правильную типизацию
-    const response: ServerResponse<Printer> = await addContractPrinterCounters(payload);
-    // В респонсе по идее придёт обновлённый принтер
-    // засетать этот принтер в state.selectedPrinter
-    // обновить соответствующий принтер в state.printersList
-    // показать тоаст?
+    try {
+      // Поменять `data: any` на правильную типизацию
+      const response: ServerResponse<Printer> = await addContractPrinterCounters(payload);
+      // В респонсе по идее придёт обновлённый принтер
+      // засетать этот принтер в state.selectedPrinter
+      // обновить соответствующий принтер в state.printersList
+      // показать тоаст?
+      this.setState((prevState: State) => ({
+        selectedPrinter: response.data.payload,
+        printersList: prevState.printersList.map(printer => {
+          if (printer._id === response.data.payload._id) {
+            return response.data.payload;
+          }
+          return printer;
+        }),
+        toastIsOpen: true,
+        toastMessage: 'You a good user in all world you successfully add new counters',
+      }));
+    } catch (error) {
+      console.log(error);
+      this.setState({
+        toastIsOpen: true,
+        toastMessage: 'check console',
+      });
+    }
+  };
+
+
+  toastOnClose = () => {
+    this.setState({ toastIsOpen: false, toastMessage: '' });
   };
 
   //RENDER
@@ -78,6 +105,7 @@ export class ContractPrinter extends React.Component<Props, State> {
           printer={selectedPrinter}
           onAddNewCounterToPrinter={this.addNewCounterToPrinter}
         />
+        <Toast open={this.state.toastIsOpen} message={this.state.toastMessage} handleClose={this.toastOnClose} />
       </div>
     );
   }
