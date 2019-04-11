@@ -5,6 +5,7 @@ import { Snackbar } from "material";
 import { Props } from './types'
 
 export class Toast extends React.Component<Props> {
+  // LOLWOOT
   render(){
     return(
       <Snackbar
