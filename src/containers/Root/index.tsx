@@ -23,14 +23,14 @@ export class RootContainer extends React.Component<{}, State> {
   render() {
     return (
       <BrowserRouter>
-        <div className={styles.container}>
+        <React.Fragment>
           <CssBaseline />
-          <MaterialHeader handleDrawerToggle={this.onSideBarStateToggle} />
-          <MiniDrawer isOpen={this.state.sideBarIsOpen} />
-          <MaterialContent>
+          {/*<MaterialHeader handleDrawerToggle={this.onSideBarStateToggle} />*/}
+          {/*<MiniDrawer isOpen={this.state.sideBarIsOpen} />*/}
+          {/*<MaterialContent>*/}
             <RootRouter />
-          </MaterialContent>
-        </div>
+          {/*</MaterialContent>*/}
+        </React.Fragment>
       </BrowserRouter>
     );
   }
