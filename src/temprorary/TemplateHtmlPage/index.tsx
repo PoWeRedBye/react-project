@@ -17,6 +17,7 @@ const data = [
   { name: 'name 8', type: 1, amount: 80, price: 8 },
   { name: 'name 9', type: 1, amount: 90, price: 9 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
+  /*{ name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
@@ -40,8 +41,7 @@ const data = [
   { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
-  { name: 'name 10', type: 1, amount: 100, price: 10 },
-  { name: 'name 10', type: 1, amount: 100, price: 10 },
+  { name: 'name 10', type: 1, amount: 100, price: 10 },*/
 ];
 
 const global = {
@@ -141,6 +141,19 @@ export class TemplateHtmlPage extends React.Component {
               <div style={{ border: '2px solid black', height: '3px', width: '127px', borderTopWidth: 0 }} />
             </div>
           </div>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', padding: '10px' }}>
+          <div>Всього на сумму:</div>
+          <div>Сумма прописью</div>
+          <div>
+            ПДВ:{' '}
+            {global.pdv
+              ? `${data.reduce((result, item) => result + item.amount * item.price, 0) * global.pdv} грн.`
+              : 'не передбачено'}
+          </div>
+        </div>
+        <div style={{display: 'flex', justifyContent: 'flex-end', padding: '0 70px'}}>
+          Виписав(ла) _________________ ФОП М.І. Озаровський
         </div>
       </React.Fragment>
     );
