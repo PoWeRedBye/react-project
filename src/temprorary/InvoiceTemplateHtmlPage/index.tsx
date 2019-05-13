@@ -1,15 +1,20 @@
 import React from 'react';
 import './styles.css';
+import numeral from 'numeral';
 
 const dictionary: { [key: string]: string } = {
   '1': 'Копії',
   '2': 'Шт.',
 };
 
+const pdv = {
+  withPDV: 2,
+};
+
 const data = [
-  { name: 'name 1', type: 1, amount: 10, price: 1 },
-  { name: 'name 2', type: 1, amount: 20, price: 2 },
-  { name: 'name 3', type: 1, amount: 30, price: 3 },
+  { name: 'Чорно-білі відбитки', type: 1, amount: 0, price: 0.6200 },
+  { name: 'Колорові відбитки', type: 1, amount: 4671, price: 2.0000},
+  /*{ name: 'name 3', type: 1, amount: 30, price: 3 },
   { name: 'name 4', type: 1, amount: 40, price: 4 },
   { name: 'name 5', type: 1, amount: 50, price: 5 },
   { name: 'name 6', type: 1, amount: 60, price: 6 },
@@ -17,7 +22,7 @@ const data = [
   { name: 'name 8', type: 1, amount: 80, price: 8 },
   { name: 'name 9', type: 1, amount: 90, price: 9 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
-  /*{ name: 'name 10', type: 1, amount: 100, price: 10 },
+  { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
   { name: 'name 10', type: 1, amount: 100, price: 10 },
@@ -44,12 +49,12 @@ const data = [
   { name: 'name 10', type: 1, amount: 100, price: 10 },*/
 ];
 
-const global = {
-  // pdv: 0,
-  pdv: 0.2,
+const global: { [key: string]: number } = {
+  '1': 0,
+  '2': 0.2,
 };
 
-export class TemplateHtmlPage extends React.Component {
+export class InvoiceTemplateHtmlPage extends React.Component {
   render() {
     return (
       <React.Fragment>
@@ -77,15 +82,15 @@ export class TemplateHtmlPage extends React.Component {
           <div>SOME DATE with format "dd" mmmm YYYY </div>
         </div>
 
-        <div style={{ backgroundColor: '#89d289', border: '1px solid black', borderBottomWidth: 0 }}>
+        <div style={{ backgroundColor: '#89d289', border: '1px solid black', borderBottomWidth: 0, marginTop: '15px'}}>
           <div style={{ border: '1px solid black', height: '3px' }} />
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>№</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>НАЙМЕНУВАННЯ</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>Од.</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>Кількість</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>Ціна, грн.</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '125px' }}>Сума, грн.</div>
+            <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm' }}>№</div>
+            <div style={{ textAlign: 'center', border: '1px solid black', width: '70mm' }}>Найменування</div>
+            <div style={{ textAlign: 'center', border: '1px solid black', width: '17mm' }}>Од.</div>
+            <div style={{ textAlign: 'center', border: '1px solid black', width: '20mm' }}>Кількість</div>
+            <div style={{ textAlign: 'center', border: '1px solid black', width: '20mm' }}>Ціна, грн.</div>
+            <div style={{ textAlign: 'center', border: '1px solid black', width: '28mm' }}>Сума, грн.</div>
           </div>
           <div style={{ border: '1px solid black', height: '3px' }} />
         </div>
@@ -94,14 +99,14 @@ export class TemplateHtmlPage extends React.Component {
             Послуги з кмплексного ослуговування виробнитства копій або відбитків
           </div>
           {data.map((item, index) => (
-            <div key={index} style={{ display: 'flex', flexDirection: 'row' }}>
-              <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>{index}</div>
-              <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>{item.name}</div>
-              <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>{dictionary[item.type]}</div>
-              <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>{item.amount}</div>
-              <div style={{ textAlign: 'center', border: '1px solid black', flex: 1 }}>{item.price}</div>
-              <div style={{ border: '1px solid black', width: '125px', textAlign: 'right', padding: '0 2px' }}>
-                {item.amount * item.price}
+            <div key={index} style={{ display: 'flex', flexDirection: 'row', wordBreak: "break-word", minHeight: '5mm' }}>
+              <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm' }}>{index}</div>
+              <div style={{ textAlign: 'center', border: '1px solid black', width: '70mm' }}>{item.name}</div>
+              <div style={{ textAlign: 'center', border: '1px solid black', width: '17mm' }}>{dictionary[item.type]}</div>
+              <div style={{ textAlign: 'center', border: '1px solid black', width: '20mm' }}>{(item.amount).toLocaleString()}</div>
+              <div style={{ textAlign: 'center', border: '1px solid black', width: '20mm' }}>{item.price.toFixed(4)}</div>
+              <div style={{ border: '1px solid black', width: '28mm', textAlign: 'right', padding: '0 2px' }}>
+                {(item.amount * item.price).toFixed(2)}
               </div>
             </div>
           ))}
@@ -124,21 +129,21 @@ export class TemplateHtmlPage extends React.Component {
               <div style={{ margin: '1px 0' }}>Всього:</div>
             </div>
             <div>
-              <div style={{ width: '127px', border: '1px solid black', borderTopWidth: 0 }}>
+              <div style={{ width: '28.25mm', border: '1px solid black', borderTopWidth: 0 }}>
                 <div style={{ border: '1px solid black', borderTopWidth: 0, textAlign: 'right', padding: '0 2px' }}>
-                  {data.reduce((result, item) => result + item.amount * item.price, 0)}
+                  {data.reduce((result, item) => result + item.amount * item.price, 0).toFixed(2)}
                 </div>
-                <div style={{ border: '1px solid black', textAlign: 'right', padding: '0 2px' }}>
-                  {global.pdv
-                    ? data.reduce((result, item) => result + item.amount * item.price, 0) * global.pdv
+                <div style={{ border: '1px solid black', textAlign: 'right', padding: '0 2px', fontSize: "smaller" }}>
+                  {global[pdv.withPDV]
+                    ? (data.reduce((result, item) => result + item.amount * item.price, 0) * global[pdv.withPDV]).toFixed(2)
                     : 'не передбачено'}
                 </div>
                 <div style={{ border: '1px solid black', textAlign: 'right', padding: '0 2px' }}>
-                  {data.reduce((result, item) => result + item.amount * item.price, 0) *
-                    (global.pdv ? global.pdv + 1 : 1)}
+                  {(data.reduce((result, item) => result + item.amount * item.price, 0) *
+                    (global[pdv.withPDV] ? global[pdv.withPDV] + 1 : 1)).toFixed(2)}
                 </div>
               </div>
-              <div style={{ border: '2px solid black', height: '3px', width: '127px', borderTopWidth: 0 }} />
+              <div style={{ border: '2px solid black', height: '3px', width: '28.25mm', borderTopWidth: 0 }} />
             </div>
           </div>
         </div>
@@ -147,8 +152,8 @@ export class TemplateHtmlPage extends React.Component {
           <div>Сумма прописью</div>
           <div>
             ПДВ:{' '}
-            {global.pdv
-              ? `${data.reduce((result, item) => result + item.amount * item.price, 0) * global.pdv} грн.`
+            {global[pdv.withPDV]
+              ? `${(data.reduce((result, item) => result + item.amount * item.price, 0) * global[pdv.withPDV])} грн.`
               : 'не передбачено'}
           </div>
         </div>

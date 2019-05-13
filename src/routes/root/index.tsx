@@ -11,7 +11,8 @@ import { UserSignIn } from 'src/pages/UserSignIn';
 import { UserProfilePage } from 'src/pages/UserProfilePage';
 import { ContractPrinter } from 'src/pages/ContractPrinter';
 
-import { TemplateHtmlPage } from 'src/temprorary/TemplateHtmlPage';
+import { InvoiceTemplateHtmlPage } from 'src/temprorary/InvoiceTemplateHtmlPage';
+import { ActTemplateHtmlPage } from "src/temprorary/ActTemplateHtmlPage";
 
 export class RootRouter extends React.Component {
   // RENDER
@@ -30,7 +31,8 @@ export class RootRouter extends React.Component {
         <Route exact path="/user-profile" component={UserProfilePage} />
         <Route exact path="/contract-printers" component={ContractPrinter} />
 
-        <Route exact path="/template-html" component={TemplateHtmlPage} />
+        <Route exact path="/template-html" component={InvoiceTemplateHtmlPage} />
+        <Route exact path="/act-template-html" component={ActTemplateHtmlPage} />
       </Switch>
     );
   }
