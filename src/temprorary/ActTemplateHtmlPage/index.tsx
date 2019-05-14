@@ -1,13 +1,11 @@
 import React from 'react';
 import './styles.css';
 
-const number = {
-  some: '01/19',
-  date: '20 лютого 2019',
-};
 const client = {
   act_number: '10',
   act_date: '24 квітня 2019',
+  contract_number:'01/19',
+  contract_date:'20 лютого 2019',
   organization_structure: 'ФІЗИЧНА ОСОБА - ПІДПРИЕМЕЦЬ',
   name_caps: 'КОЧНЕВ КОНСТЯНТИН В\'ЯЧЕСЛАВОВИЧ',
   name_with_initials: 'К.В. Кочнев',
@@ -33,16 +31,15 @@ export class ActTemplateHtmlPage extends React.Component {
       <React.Fragment>
         {/*шапка*/}
         <div style={{ display: 'flex', flexDirection: 'row', marginTop: '25px' }}>
-          <div
-            style={{ display: 'flex', flex: 0.8, justifyContent: 'center', paddingLeft: '100px', fontWeight: 800}}>
-            АКТ №: {client.act_number}
+          <div style={{ display: 'flex', flex: 0.8, justifyContent: 'center', paddingLeft: '100px', fontWeight: 800}}>
+            <span>АКТ №: {client.act_number}</span>
           </div>
           <div style={{ display: 'flex', flex: 0.2, justifyContent: 'center', fontSize: 'smaller', fontWeight: 800}}>
             {client.act_date}
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', fontSize: 'small', fontWeight: 800 }}>
-          виконаних робіт за договором №{number.some} C + M від {number.date}
+          виконаних робіт за договором №{client.contract_number} C + M від {client.contract_date}
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', fontSize: 'small', fontWeight: 800 }}>
           з комплексного обслуговування виробництва копій або відбитків
@@ -63,9 +60,15 @@ export class ActTemplateHtmlPage extends React.Component {
           style={{ border: '1px solid black', borderTopWidth: 1, borderBottomWidth: 0, marginTop: '15px', }}>
           <div style={{ border: '1px solid black', height: '3px' }} />
           <div style={{ display: 'flex', flexDirection: 'row', minHeight: '15mm', backgroundColor: '#89d289' }}>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm', fontWeight: 800, fontSize: 'small', }}>№</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '128mm', fontWeight: 800, fontSize: 'small', }}>Найменування</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '26mm', fontWeight: 800, fontSize: 'small', }}>Ціна копії, грн. згідно договору</div>
+            <div style={{border: '1px solid black', width: '8mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }} >№</span>
+            </div>
+            <div style={{border: '1px solid black', width: '128mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Найменування</span>
+            </div>
+            <div style={{border: '1px solid black', width: '26mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Ціна копії, грн. згідно договору</span>
+            </div>
           </div>
           <div style={{ border: '1px solid black', height: '3px' }} />
         </div>
@@ -87,31 +90,89 @@ export class ActTemplateHtmlPage extends React.Component {
         <div style={{ border: '1px solid black', borderTopWidth: 1, borderBottomWidth: 0, marginTop: '15px', }}>
           <div style={{ border: '1px solid black', height: '3px' }} />
           <div style={{ display: 'flex', flexDirection: 'row', minHeight: '15mm', backgroundColor: '#89d289' }}>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm', fontWeight: 800, fontSize: 'small', }}>№</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '62mm', fontWeight: 800, fontSize: 'small', }}>Найменування</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '22mm', fontWeight: 800, fontSize: 'small', }}>Попередні показники лічільників</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '22mm', fontWeight: 800, fontSize: 'small', }}>Поточні показники лічільників</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '23mm', fontWeight: 800, fontSize: 'small', }}>Кількість, штук</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '26mm', fontWeight: 800, fontSize: 'small', }}>Ціна, грн.</div>
+            <div style={{ border: '1px solid black', width: '8mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }} >№</span>
+            </div>
+            <div style={{ border: '1px solid black', width: '64mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Найменування</span>
+            </div>
+            <div style={{ border: '1px solid black', width: '22mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Попередні показники лічільників</span>
+            </div>
+            <div style={{ border: '1px solid black', width: '22mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Поточні показники лічільників</span>
+            </div>
+            <div style={{ border: '1px solid black', width: '21mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Кількість, штук</span>
+            </div>
+            <div style={{ border: '1px solid black', width: '26mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 800, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>Ціна, грн.</span>
+            </div>
           </div>
           <div style={{ border: '1px solid black', height: '3px' }} />
         </div>
         <div style={{ border: '1px solid black', borderTopWidth: 0 }}>
           <div style={{ display: 'flex', flexDirection: 'row', wordBreak: 'break-word', minHeight: '5mm', }}>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm', fontWeight: 400, fontSize: 'small', }}>{1}</div>
-            <div style={{ textAlign: 'start', border: '1px solid black', width: '62mm', fontWeight: 400, fontSize: 'small', }}>Послуги з комплексного обслуговування копій: чорно-білі відбитки</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '22mm', fontWeight: 400, fontSize: 'small', }}>{client.bw_prev_counter.toLocaleString()}</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '22mm', fontWeight: 400, fontSize: 'small', }}>{client.bw_current_counter.toLocaleString()}</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '23mm', fontWeight: 400, fontSize: 'small', }}>{(client.bw_current_counter - client.bw_prev_counter).toLocaleString()}</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '26mm', fontWeight: 400, fontSize: 'small', }}>{((client.bw_current_counter - client.bw_prev_counter) * client.bw_price).toFixed(2).toLocaleString()}</div>
+            <div style={{border: '1px solid black', width: '8mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {1}
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '64mm'}}>
+              <span style={{display: 'inline-grid',paddingLeft: '5px', textAlign: 'start', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                Послуги з комплексного обслуговування копій: чорно-білі відбитки
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '22mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>{client.bw_prev_counter.toLocaleString()}</span>
+            </div>
+            <div style={{border: '1px solid black', width: '22mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {client.bw_current_counter.toLocaleString()}
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '21mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {(client.bw_current_counter - client.bw_prev_counter).toLocaleString()}
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '26mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {((client.bw_current_counter - client.bw_prev_counter) * client.bw_price).toFixed(2).toLocaleString()}
+              </span>
+            </div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row', wordBreak: 'break-word', minHeight: '5mm', }}>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm', fontWeight: 400, fontSize: 'small', }}>{2}</div>
-            <div style={{ textAlign: 'start', border: '1px solid black', width: '62mm', fontWeight: 400, fontSize: 'small', }}>Послуги з комплексного обслуговування копій: повнокольорові відбитки</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '22mm', fontWeight: 400, fontSize: 'small', }}>{client.color_prev_counter.toLocaleString()}</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '22mm', fontWeight: 400, fontSize: 'small', }}>{client.color_current_counter.toLocaleString()}</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '23mm', fontWeight: 400, fontSize: 'small', }}>{(client.color_current_counter - client.color_prev_counter).toLocaleString()}</div>
-            <div style={{ textAlign: 'center', border: '1px solid black', width: '26mm', fontWeight: 400, fontSize: 'small', }}>{((client.color_current_counter - client.color_prev_counter) * client.color_price).toFixed(2).toLocaleString()}</div>
+            <div style={{border: '1px solid black', width: '8mm'}}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {2}
+              </span>
+            </div>
+            <div style={{ border: '1px solid black', width: '64mm'}}>
+              <span style={{display: 'inline-grid',paddingLeft: '5px', textAlign: 'start', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                Послуги з комплексного обслуговування копій: повнокольорові відбитки
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '22mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {client.color_prev_counter.toLocaleString()}
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '22mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {client.color_current_counter.toLocaleString()}
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '21mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {(client.color_current_counter - client.color_prev_counter).toLocaleString()}
+              </span>
+            </div>
+            <div style={{border: '1px solid black', width: '26mm' }}>
+              <span style={{display: 'inline-grid',textAlign: 'center', fontWeight: 400, width: '100%', height: '100%', fontSize: 'small', alignItems: 'center' }}>
+                {((client.color_current_counter - client.color_prev_counter) * client.color_price).toFixed(2).toLocaleString()}
+              </span>
+            </div>
           </div>
           <div style={{ border: '1px solid black', height: '3px' }} />
         </div>
