@@ -1,0 +1,12 @@
+html,
+body,
+div[id='root'] {
+  width: 210mm;
+  height: 297mm;
+  background: white;
+}
+
+div[id='root'] {
+  background-color: whitesmoke;
+  padding: 24mm;
+}
