@@ -5,7 +5,8 @@ import { format } from 'date-fns';
 import { List, ListItem } from 'material';
 
 import { DATE_FORMAT } from 'src/constants';
-import RU from 'date-fns/locale/ru';
+import UK from 'date-fns/locale/uk';
+import parse from 'date-fns/parse'
 import { Switcher } from 'src/components/non_checked_switch';
 import { Input } from 'src/components/read_only_text_field';
 
@@ -27,7 +28,7 @@ export class CountersList extends React.Component<Props, State> {
                     <Input disabled value={item.counter} fieldName="Counter:" />
                   </div>
                   <div className={styles.flex_column_2}>
-                    <Input disabled value={format(item.date, DATE_FORMAT, {locale: RU})} fieldName="Date:" />
+                    <Input disabled value={parse(item.date, DATE_FORMAT, new Date(), {locale: UK})} fieldName="Date:" />
                   </div>
                 </div>
                 <div className={styles.flex_row_1}>

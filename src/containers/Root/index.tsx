@@ -1,7 +1,9 @@
 import React from 'react';
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
 import { CssBaseline } from 'material';
 
+import { store } from "src/store";
 import { RootRouter } from 'src/routes/root';
 import { MaterialHeader } from 'src/components/material_mini_header';
 import { MiniDrawer } from 'src/components/material_mini_drawer';
@@ -22,16 +24,18 @@ export class RootContainer extends React.Component<{}, State> {
 
   render() {
     return (
-      <BrowserRouter>
-        <div className={styles.container}>
-          <CssBaseline />
-          <MaterialHeader handleDrawerToggle={this.onSideBarStateToggle} />
-          <MiniDrawer isOpen={this.state.sideBarIsOpen} />
-          <MaterialContent>
-            <RootRouter />
-          </MaterialContent>
-        </div>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <div className={styles.container}>
+            <CssBaseline />
+            <MaterialHeader handleDrawerToggle={this.onSideBarStateToggle} />
+            <MiniDrawer isOpen={this.state.sideBarIsOpen} />
+            <MaterialContent>
+              <RootRouter />
+            </MaterialContent>
+          </div>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
