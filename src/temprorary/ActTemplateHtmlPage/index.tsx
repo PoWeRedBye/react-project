@@ -15,9 +15,7 @@ const client = {
   mfo:'351005',
   device_name: 'bizhub С6501',
   device_sn: 'A0U2021000134',
-  bw_price_name: 'За один чорно-білий відбиток',
   bw_price: 0.62,
-  color_price_name: 'За один повнокольоровий відбиток',
   color_price: 2,
   bw_prev_counter: 265900,
   bw_current_counter: 265900,
@@ -75,12 +73,12 @@ export class ActTemplateHtmlPage extends React.Component {
         <div style={{ border: '1px solid black', borderTopWidth: 0 }}>
           <div style={{ display: 'flex', flexDirection: 'row', wordBreak: 'break-word', minHeight: '5mm', }}>
             <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm', fontWeight: 400, fontSize: 'small', }}>{1}</div>
-            <div style={{ textAlign: 'start', border: '1px solid black', width: '128mm', fontWeight: 400, fontSize: 'small', }}>{client.bw_price_name}</div>
+            <div style={{ textAlign: 'start', border: '1px solid black', width: '128mm', fontWeight: 400, fontSize: 'small', }}>За один чорно-білий відбиток</div>
             <div style={{ textAlign: 'center', border: '1px solid black', width: '26mm', fontWeight: 400, fontSize: 'small', }}>{client.bw_price}</div>
           </div>
           <div style={{ display: 'flex', flexDirection: 'row', wordBreak: 'break-word', minHeight: '5mm', }}>
             <div style={{ textAlign: 'center', border: '1px solid black', width: '8mm', fontWeight: 400, fontSize: 'small', }}>{2}</div>
-            <div style={{ textAlign: 'start', border: '1px solid black', width: '128mm', fontWeight: 400, fontSize: 'small', }}>{client.color_price_name}</div>
+            <div style={{ textAlign: 'start', border: '1px solid black', width: '128mm', fontWeight: 400, fontSize: 'small', }}>За один повнокольоровий відбиток</div>
             <div style={{ textAlign: 'center', border: '1px solid black', width: '26mm', fontWeight: 400, fontSize: 'small', }}>{client.color_price}</div>
           </div>
           <div style={{ border: '1px solid black', height: '3px' }} />
