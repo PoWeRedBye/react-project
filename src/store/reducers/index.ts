@@ -2,11 +2,13 @@ import { AnyAction, combineReducers, Reducer } from 'redux';
 
 import { AppState } from 'src/types/redux';
 import { exampleReducer } from './example';
+import { contractPrintersReducer } from "./contract_printers";
 
 // Combine all application reducers to delegate them to
 // the root reducer that will be exported to the store
 const appReducers: Reducer<AppState> = combineReducers({
   example: exampleReducer,
+  contractPrinters: contractPrintersReducer,
 });
 
 export const reducers = (state: AppState | undefined, action: AnyAction): AppState => {

@@ -6,7 +6,7 @@ import { DEFAULT_LIMIT } from 'src/constants';
 import { ServerResponse } from 'src/types/server';
 import { ContractPrintersCounter } from 'src/endpoints/printer/contract/types';
 import { Printer } from 'src/types/models';
-import { addContractPrinterCounters, getContractPrinters } from 'src/endpoints/printer/contract';
+import { addContractPrinterCounters } from 'src/endpoints/printer/contract';
 // Local -//-//-
 import { PrintersList } from './components/printers_list';
 import { PrinterInfo } from './components/printer_info';
@@ -44,12 +44,9 @@ export class ContractPrinter extends React.Component<Props, State> {
   //</editor-fold>
 
   //<editor-fold desc="Helper functions">
-  getContractPrinters = async (client: string = '') => {
+  getContractPrinters = (client: string = '') => {
     const { limit, page } = this.state;
-    const response: ServerResponse<Printer[]> = await getContractPrinters({ client, limit, page });
-
-    // Do first printers fetch here
-    this.setState({ printersList: response.data.payload });
+    this.props.getAllPrinters!(client, limit, page);
   };
   //</editor-fold>
 
@@ -81,7 +78,6 @@ export class ContractPrinter extends React.Component<Props, State> {
     }
   };
 
-
   toastOnClose = () => {
     this.setState({ toastIsOpen: false, toastMessage: '' });
   };
@@ -89,13 +85,14 @@ export class ContractPrinter extends React.Component<Props, State> {
   //RENDER
 
   render() {
-    const { printersList, selectedPrinter } = this.state;
+    const { selectedPrinter } = this.state;
+    console.log(this.props.printers);
 
     return (
       <div className={styles.container}>
         <PrintersList
           className={styles.printer_list}
-          printersList={printersList}
+          printersList={this.props.printers as Printer[]}
           onSearchChange={this.onSearchChange}
           onPrinterSelect={this.onPrinterSelect}
         />
