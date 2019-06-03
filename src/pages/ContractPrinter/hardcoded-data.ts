@@ -9,7 +9,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 8000,
     counters: [
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99128685ce1ef8483529',
         counter: 100,
         new_cartridge: true,
@@ -20,7 +20,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99228685ce1ef848352a',
         counter: 1000,
         new_cartridge: true,
@@ -31,7 +31,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99468685ce1ef848352b',
         counter: 2000,
         new_cartridge: true,
@@ -42,7 +42,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99638685ce1ef848352c',
         counter: 5000,
         new_cartridge: true,
@@ -53,7 +53,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b998b8685ce1ef848352d',
         counter: 7000,
         new_cartridge: false,
@@ -64,7 +64,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: true,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99978685ce1ef848352e',
         counter: 8000,
         new_cartridge: false,
@@ -86,7 +86,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 10000,
     counters: [
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99b48685ce1ef848352f',
         counter: 2500,
         new_cartridge: true,
@@ -97,7 +97,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99bf8685ce1ef8483530',
         counter: 7500,
         new_cartridge: true,
@@ -108,7 +108,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99db8685ce1ef8483531',
         counter: 10000,
         new_cartridge: false,
@@ -130,7 +130,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 15000,
     counters: [
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99e48685ce1ef8483532',
         counter: 1000,
         new_cartridge: false,
@@ -141,7 +141,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: true,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99f08685ce1ef8483533',
         counter: 10000,
         new_cartridge: true,
@@ -152,7 +152,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-15T12:11:33.062Z',
+        date: new Date('2019-03-15T12:11:33.062Z'),
         _id: '5c8b99f98685ce1ef8483534',
         counter: 15000,
         new_cartridge: true,
@@ -174,7 +174,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 70000,
     counters: [
       {
-        date: '2019-03-18T12:44:51.613Z',
+        date: new Date('2019-03-18T12:44:51.613Z'),
         _id: '5c8f93334215e42b7cf86452',
         counter: 50000,
         new_cartridge: true,
@@ -185,7 +185,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-18T12:44:51.613Z',
+        date: new Date('2019-03-18T12:44:51.613Z'),
         _id: '5c8f933b4215e42b7cf86453',
         counter: 70000,
         new_cartridge: true,
@@ -207,7 +207,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 20000,
     counters: [
       {
-        date: '2019-03-18T12:44:51.613Z',
+        date: new Date('2019-03-18T12:44:51.613Z'),
         _id: '5c8f93484215e42b7cf86454',
         counter: 7000,
         new_cartridge: true,
@@ -218,7 +218,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-18T12:44:51.613Z',
+        date: new Date('2019-03-18T12:44:51.613Z'),
         _id: '5c8f93544215e42b7cf86455',
         counter: 15000,
         new_cartridge: true,
@@ -229,7 +229,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-19T13:22:13.744Z',
+        date: new Date('2019-03-19T13:22:13.744Z'),
         _id: '5c90ed12b54ea12ac80793a3',
         counter: 20000,
         new_cartridge: false,
@@ -251,7 +251,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 10000,
     counters: [
       {
-        date: '1970-01-01T00:00:00.019Z',
+        date: new Date('1970-01-01T00:00:00.019Z'),
         _id: '5c90efaa3a66d828e085489c',
         counter: 7777,
         new_cartridge: false,
@@ -262,7 +262,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: true,
       },
       {
-        date: '1970-01-01T00:00:00.401Z',
+        date: new Date('1970-01-01T00:00:00.401Z'),
         _id: '5c90f0d0cdd915109cb9e401',
         counter: 10000,
         new_cartridge: false,
@@ -284,7 +284,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 30000,
     counters: [
       {
-        date: '2019-03-18T12:44:51.613Z',
+        date: new Date('2019-03-18T12:44:51.613Z'),
         _id: '5c8f931d4215e42b7cf86450',
         counter: 15000,
         new_cartridge: true,
@@ -295,7 +295,7 @@ export const hardcodedPrinters: Printer[] = [
         nothing: false,
       },
       {
-        date: '2019-03-18T12:44:51.613Z',
+        date: new Date('2019-03-18T12:44:51.613Z'),
         _id: '5c8f93294215e42b7cf86451',
         counter: 30000,
         new_cartridge: true,
@@ -335,7 +335,7 @@ export const hardcodedPrinters: Printer[] = [
     current_counter: 10000,
     counters: [
       {
-        date: '2019-03-26T19:01:36.000Z',
+        date: new Date('2019-03-26T19:01:36.000Z'),
         _id: '5c9aa81153c3462354e2340d',
         counter: 10000,
         new_cartridge: false,

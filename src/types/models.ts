@@ -10,7 +10,7 @@ export interface Printer {
 }
 
 export interface PrintersCounter {
-  date: string;
+  date: number | Date;
   _id: string;
   counter: number;
   new_cartridge: boolean;

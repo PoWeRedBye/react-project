@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import numeral from 'numeral';
 
 const dictionary: { [key: string]: string } = {
   '1': 'Копії',
