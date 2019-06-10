@@ -1,14 +1,13 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { AnyAction } from 'redux';
 
-function* apiRequestHandler(action: AnyAction): Iterable<any> {
+import { ReduxAction, ReduxSagaAction } from 'src/types/redux';
+import { RequestStatusTypes } from 'src/store/reducers/api-requests';
+
+function* apiRequestHandler(action: ReduxSagaAction): Iterable<any> {
   const {
     promise,
-    subtypes: { START, FAIL, SUCCESS },
+    subtypes: { FAIL, SUCCESS },
   } = action;
-
-  // Пометить реквест как стартанувший
-  yield put({ type: START });
 
   try {
     // Постучаться на АПИ
@@ -23,5 +22,8 @@ function* apiRequestHandler(action: AnyAction): Iterable<any> {
 }
 
 export function* GlobalApiSaga(): IterableIterator<any> {
-  yield takeEvery('API_REQUEST', apiRequestHandler);
+  yield takeEvery(
+    (action: ReduxAction): boolean => action.type.endsWith(`:${RequestStatusTypes.START}`),
+    apiRequestHandler,
+  );
 }

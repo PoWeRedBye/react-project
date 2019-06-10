@@ -1,7 +1,7 @@
 export type RequestStatus = {
-  STARTED: string;
-  SUCCEED: string;
-  FAILED: string;
+  START: string;
+  SUCCESS: string;
+  FAIL: string;
 };
 
 export type StatusesState = {

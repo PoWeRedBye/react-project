@@ -5,5 +5,5 @@ export const selectRequestStatus = (state: AppState, name: string): boolean => {
 };
 
 export const selectRequestError = (state: AppState, name: string): any => {
-  return state.apiRequests.errors[name] || {};
+  return state.apiRequests.errors[name] || null;
 };

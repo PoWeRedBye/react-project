@@ -9,21 +9,21 @@ export const apiRequestsReducer = (state: State = initialState, action: ReduxAct
   const [requestName, requestStatus] = action.type.split(':');
 
   switch (requestStatus) {
-    case STATUS.STARTED:
+    case STATUS.START:
       return {
         ...state,
         statuses: helpers.markAsInProgress(state.statuses, requestName),
         errors: helpers.removeErrors(state.errors, requestName),
       };
 
-    case STATUS.FAILED:
+    case STATUS.FAIL:
       return {
         ...state,
         statuses: helpers.markAsCompleted(state.statuses, requestName),
         errors: helpers.storeErrors(state.errors, requestName, action.error),
       };
 
-    case STATUS.SUCCEED:
+    case STATUS.SUCCESS:
       return {
         ...state,
         statuses: helpers.markAsCompleted(state.statuses, requestName),

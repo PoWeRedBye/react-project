@@ -1,9 +1,9 @@
 import { ApiRequestsReducerState, RequestStatus } from './types';
 
 export const STATUS: RequestStatus = {
-  STARTED: 'started',
-  FAILED: 'failed',
-  SUCCEED: 'succeed',
+  START: 'start',
+  FAIL: 'fail',
+  SUCCESS: 'success',
 };
 
 export const initialState: ApiRequestsReducerState = {
