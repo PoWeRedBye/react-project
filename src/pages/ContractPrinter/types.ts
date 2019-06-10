@@ -1,14 +1,16 @@
 import { Printer } from 'src/types/models';
+import { ContractPrintersCounter } from 'src/endpoints/printer/contract/types';
 
 export interface Props {
   // From redux
-  printers?: unknown[];
-  getAllPrinters?(client: any, limit: any, page: any): void;
+  printers: Printer[];
+  getAllPrinters(client: any, limit: any, page: any): void;
+  setNewContractPrinterCounters(payload: ContractPrintersCounter): void;
 }
 
 export interface State {
   printersList: Printer[];
-  selectedPrinter: Printer | null;
+  selectedPrinter: string | null;
   limit: number;
   page: number;
   toastMessage: string;

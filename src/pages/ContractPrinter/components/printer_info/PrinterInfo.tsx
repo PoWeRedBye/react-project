@@ -28,9 +28,9 @@ export class PrinterInfo extends React.Component<Props, State> {
 
   //RENDER
   render() {
-    const { className, printer } = this.props;
+    const { className, printer, printerId } = this.props;
 
-    if (printer === null) {
+    if (printerId === null) {
       return (
         <Card classes={{ root: classNames(className) }}>
           <p>Выберите принтер</p>
@@ -38,7 +38,7 @@ export class PrinterInfo extends React.Component<Props, State> {
       );
     }
 
-    const { printer_model, printer_serial_number, client, current_counter } = printer;
+    const { printer_model, printer_serial_number, client, current_counter, counters } = printer!;
 
     return (
       <Card classes={{ root: classNames(className) }}>
@@ -57,7 +57,7 @@ export class PrinterInfo extends React.Component<Props, State> {
             Add new counters
           </h2>
         </div>
-        <CountersList items={printer.counters} />
+        <CountersList items={counters} />
         <CountersModal
           open={this.state.modalIsOpen}
           handleClose={this.toggleModal}

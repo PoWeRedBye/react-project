@@ -3,10 +3,8 @@ import React from 'react';
 import debounce from 'lodash/debounce';
 // Import global constants | types | services | models/modules/containers | components | styles
 import { DEFAULT_LIMIT } from 'src/constants';
-import { ServerResponse } from 'src/types/server';
 import { ContractPrintersCounter } from 'src/endpoints/printer/contract/types';
 import { Printer } from 'src/types/models';
-import { addContractPrinterCounters } from 'src/endpoints/printer/contract';
 // Local -//-//-
 import { PrintersList } from './components/printers_list';
 import { PrinterInfo } from './components/printer_info';
@@ -38,44 +36,32 @@ export class ContractPrinter extends React.Component<Props, State> {
   onPrinterSelect = (selectedPrinter: Printer) => {
     // Do something with selected printer here
     // For example validate or w/e
-    this.setState({ selectedPrinter });
-    console.log(selectedPrinter);
+    this.setState({ selectedPrinter: selectedPrinter._id });
   };
   //</editor-fold>
 
   //<editor-fold desc="Helper functions">
   getContractPrinters = (client: string = '') => {
     const { limit, page } = this.state;
-    this.props.getAllPrinters!(client, limit, page);
+    this.props.getAllPrinters(client, limit, page);
   };
   //</editor-fold>
 
-  addNewCounterToPrinter = async (payload: ContractPrintersCounter) => {
-    try {
-      // Поменять `data: any` на правильную типизацию
-      const response: ServerResponse<Printer> = await addContractPrinterCounters(payload);
-      // В респонсе по идее придёт обновлённый принтер
-      // засетать этот принтер в state.selectedPrinter
-      // обновить соответствующий принтер в state.printersList
-      // показать тоаст?
-      this.setState((prevState: State) => ({
-        selectedPrinter: response.data.payload,
-        printersList: prevState.printersList.map(printer => {
-          if (printer._id === response.data.payload._id) {
-            return response.data.payload;
-          }
-          return printer;
-        }),
-        toastIsOpen: true,
-        toastMessage: 'You a good user in all world you successfully add new counters',
-      }));
-    } catch (error) {
-      console.log(error);
-      this.setState({
-        toastIsOpen: true,
-        toastMessage: 'check console',
-      });
-    }
+  addNewCounterToPrinter = (payload: ContractPrintersCounter) => {
+    this.props.setNewContractPrinterCounters(payload);
+
+    // try {
+    //   this.setState({
+    //     toastIsOpen: true,
+    //     toastMessage: 'You a good user in all world you successfully add new counters',
+    //   });
+    // } catch (error) {
+    //   console.log(error);
+    //   this.setState({
+    //     toastIsOpen: true,
+    //     toastMessage: 'check console',
+    //   });
+    // }
   };
 
   toastOnClose = () => {
@@ -86,7 +72,6 @@ export class ContractPrinter extends React.Component<Props, State> {
 
   render() {
     const { selectedPrinter } = this.state;
-    console.log(this.props.printers);
 
     return (
       <div className={styles.container}>
@@ -99,7 +84,7 @@ export class ContractPrinter extends React.Component<Props, State> {
 
         <PrinterInfo
           className={styles.printer_info}
-          printer={selectedPrinter}
+          printerId={selectedPrinter}
           onAddNewCounterToPrinter={this.addNewCounterToPrinter}
         />
         <Toast open={this.state.toastIsOpen} message={this.state.toastMessage} handleClose={this.toastOnClose} />

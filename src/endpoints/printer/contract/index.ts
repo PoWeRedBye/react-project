@@ -9,6 +9,6 @@ export const getContractPrinters = (payload: Payload.ContractPrinters): AxiosPro
   return Axios.POST(`${urlPrefix}/getAllContractPrinterByClient`, payload);
 };
 
-export const addContractPrinterCounters = (payload: Payload.ContractPrintersCounter): AxiosPromise => {
+export const setNewContractPrinterCounters = (payload: Payload.ContractPrintersCounter): AxiosPromise => {
   return Axios.POST(`${urlPrefix}/addNewCounterToContractPrinter`, payload);
 };

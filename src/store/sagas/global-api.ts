@@ -15,9 +15,11 @@ function* apiRequestHandler(action: ReduxSagaAction): Iterable<any> {
 
     // Положить данные в редакс
     yield put({ type: SUCCESS, payload: result });
+    // yield put({ type: 'show_toaster', message: action.toaster.success })
   } catch (error) {
     // Положить ошибки в редакс
     yield put({ type: FAIL, error });
+    // yield put({ type: 'show_toaster', message: action.toaster.fail })
   }
 }
 

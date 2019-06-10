@@ -1,6 +1,8 @@
 import { ReduxAction } from 'src/types/redux';
-import { ContractPrinters } from './constats';
+import { Printer } from 'src/types/models';
+
 import { ContractPrintersReducerState as State } from './types';
+import { ContractPrinters } from './constats';
 import { ACTIONS_TYPES } from './action-types';
 
 export const contractPrintersReducer = (state: State = ContractPrinters, action: ReduxAction): State => {
@@ -11,7 +13,23 @@ export const contractPrintersReducer = (state: State = ContractPrinters, action:
         list: action.payload.data.payload,
       };
 
+    case ACTIONS_TYPES.CONTRACT_PRINTER__SET_NEW_COUNTERS__SUBTYPES.SUCCESS: {
+      const updatedPrinter = action.payload.data.payload;
+
+      return {
+        ...state,
+        list: state.list.map((oldPrinter: Printer) => {
+          if (oldPrinter._id === updatedPrinter._id) {
+            return updatedPrinter;
+          }
+
+          return oldPrinter;
+        }),
+      };
+    }
+
     default:
       return state;
   }
 };
+
