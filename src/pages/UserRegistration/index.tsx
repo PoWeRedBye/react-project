@@ -1,14 +1,18 @@
-import React from 'react';
+import { UserRegister as Component } from './UserRegister';
+import { bindActionCreators, Dispatch } from "redux";
+import { userRegister } from "src/store/reducers/user";
+import { connect } from "react-redux";
 
-import styles from './UserRegistration.module.scss';
 
-export class UserRegistration extends React.Component {
-  //RENDER
-  render() {
-    return (
-      <div className={styles.user_register}>
-        <div className={styles.user} />
-      </div>
-    );
-  }
-}
+const mapActionsToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      userRegister,
+    },
+    dispatch,
+  );
+
+export const UserRegister = connect(
+  null,
+  mapActionsToProps,
+)(Component);

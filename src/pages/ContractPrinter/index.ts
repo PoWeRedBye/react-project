@@ -9,7 +9,6 @@ const mapStateToProps = (state: AppState) => ({
   printers: selectAllPrinters(state),
 });
 
-//mapDispatchToProps:
 const mapActionsToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {

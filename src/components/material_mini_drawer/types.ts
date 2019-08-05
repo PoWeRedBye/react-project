@@ -2,8 +2,12 @@
 import { AnyObject } from 'src/types/common';
 
 export interface Props {
+  // Parent
   classes: AnyObject;
   isOpen: boolean;
+  // @connect
+  isAuthorized: boolean,
+  userLogout(): void;
 }
 
 export interface State {

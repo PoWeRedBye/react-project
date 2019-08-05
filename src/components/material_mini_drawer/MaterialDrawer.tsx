@@ -5,6 +5,8 @@ import { Drawer, InboxIcon, List, ListItem, ListItemIcon, ListItemText, MailIcon
 import { withStyles } from '@material-ui/core/styles';
 
 import { Props, State } from './types';
+import { ROUTES } from 'src/containers/Root/constants';
+import { Navigation } from 'src/services';
 
 const drawerWidth = 240;
 
@@ -66,13 +68,21 @@ const styles = (theme: any) => ({
   },
 });
 
-class MaterialDrawer extends React.Component<Props, State> {
+export class MaterialDrawer extends React.Component<Props, State> {
   state: State = {
     open: false,
   };
 
+  onAuthorizedChangeButtonClick = () => {
+    if (this.props.isAuthorized) {
+      this.props.userLogout();
+    } else {
+      Navigation.goTo(ROUTES.login);
+    }
+  };
+
   render() {
-    const { classes } = this.props;
+    const { classes, isAuthorized } = this.props;
 
     return (
       <Drawer
@@ -100,8 +110,8 @@ class MaterialDrawer extends React.Component<Props, State> {
         </List>
         {/* TODO {Maxim Ozarovskiy}: add only one login/logout button at this list */}
         <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
+          {[isAuthorized ? 'Logout' : 'Login'].map((text, index) => (
+            <ListItem button key={text} onClick={this.onAuthorizedChangeButtonClick}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
               <ListItemText primary={text} />
             </ListItem>

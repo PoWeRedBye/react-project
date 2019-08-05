@@ -20,3 +20,17 @@ export interface PrintersCounter {
   new_maintenance: boolean;
   nothing: boolean;
 }
+
+export interface User {
+  email: string,
+  displayName: string,
+}
+
+//TODO: {FIX} need create more interest model
+export interface PolygraphyCard {
+  _id: string;
+  card_name: string;
+  card_image: string;
+  typed_count: string;
+  typed_price: string;
+}

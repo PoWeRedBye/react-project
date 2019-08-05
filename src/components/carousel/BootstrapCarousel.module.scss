@@ -1,0 +1,17 @@
+.svg {
+  //display: flex;
+  //justify-content: center;
+  //height: 300px;
+  //width: 500px;
+}
+
+.carousel {
+  padding: 15px;
+  :global {
+    .slider-control-bottomcenter,
+    .slider-control-centerleft,
+    .slider-control-centerright {
+      display: none;
+    }
+  }
+}

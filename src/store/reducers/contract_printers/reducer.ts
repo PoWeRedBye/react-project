@@ -10,11 +10,11 @@ export const contractPrintersReducer = (state: State = ContractPrinters, action:
     case ACTIONS_TYPES.CONTRACT_PRINTER__GET_PRINTERS__SUBTYPES.SUCCESS:
       return {
         ...state,
-        list: action.payload.data.payload,
+        list: action.payload.payload,
       };
 
     case ACTIONS_TYPES.CONTRACT_PRINTER__SET_NEW_COUNTERS__SUBTYPES.SUCCESS: {
-      const updatedPrinter = action.payload.data.payload;
+      const updatedPrinter = action.payload.payload;
 
       return {
         ...state,

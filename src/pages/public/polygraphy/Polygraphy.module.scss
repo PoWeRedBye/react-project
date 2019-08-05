@@ -1,0 +1,83 @@
+.polygraphy{
+  overflow-y: scroll;
+  height: 100%;
+}
+.polygraphySlide{
+  //display: flex;
+  //justify-content: center;
+  background-color: #a6d78c;
+}
+.polygraphyHighPriorityText {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  font-family: cursive;
+}
+.polygraphyButtons{
+  margin-top: 10px;
+  background-color: bisque;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-right: 25px;
+  margin-left: 25px;
+}
+.polygraphyCard {
+  background-color: deeppink;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+}
+.contacts {
+  display: grid;
+  grid-template-columns: 33% 33% 34%;
+
+}
+.contacts-image {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.svg{
+  fill: #ffe7f8;
+  padding: 5px;
+  height: 150px;
+  width: 150px;
+  justify-content: center;
+}
+.contacts-button {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.contacts-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+  width: 0px;
+  // width: 5px -- if need visible scroll
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  //background: rgba(132, 134, 134, 0.8); -- if need visible scroll
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0, 0, 0, 0);
+}

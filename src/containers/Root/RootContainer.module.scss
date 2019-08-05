@@ -3,10 +3,12 @@
   body,
   div[id='root'] {
     height: 100%;
+    overflow: hidden;
   }
 }
 
 .container {
-  display: flex;
-  height: 100%;
+  background-color: #33d9de;
+  margin-top: 56px;
+  height: calc(100% - 56px);
 }

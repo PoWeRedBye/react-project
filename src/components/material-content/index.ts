@@ -1,1 +1,0 @@
-export { MaterialContent } from './MaterialContent';

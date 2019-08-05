@@ -1,0 +1,13 @@
+:global {
+  .navbar {
+    background-color: #d6d6d6;
+  }
+  .navigations{
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: 75px;
+    margin-right: 75px;
+
+  }
+}
