@@ -7,4 +7,5 @@ export type Options = LocationDescriptorObject & {
 export type Navigation = {
   init(history: History): void;
   goTo(path: Path, options?: Options): void;
+  goBack():void;
 };

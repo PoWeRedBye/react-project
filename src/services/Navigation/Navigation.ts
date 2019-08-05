@@ -32,9 +32,9 @@ export const Navigation: NavigationService = (() => {
   };
 
   //TODO: router - goBack function**
-  /*const goBack = () => {
+  const goBack = () => {
     history.goBack();
-  };*/
+  };
 
-  return { init, goTo };
+  return { init, goTo, goBack };
 })();
