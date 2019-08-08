@@ -27,8 +27,9 @@ function* loginHandler(action : ReduxAction): Iterable<any> {
   yield localStorage.setItem('token', action.payload.token);
   yield localStorage.setItem('refresh-token', action.payload.refreshToken);
   Axios.setAuthToken(action.payload.token);
-  Navigation.goBack();
-  //Navigation.goTo(ROUTES.contract_printers);
+  // TODO: {FIX NAVIGATION ROUTEs in some cases} need change route from login in case where user enter first route login!!!
+  //Navigation.goBack();
+  Navigation.goTo(ROUTES.contract_printers);
 }
 
 function* logoutHandler():Iterable<any>{

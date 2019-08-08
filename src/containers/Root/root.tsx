@@ -5,10 +5,10 @@ import { createBrowserHistory, History } from 'history';
 
 import { Navigation } from 'src/services';
 import { store } from 'src/store';
-import { checkUserAuth } from 'src/store/reducers/user';
-import { RootRouter } from 'src/routes/root';
+import { PublicRootRouter } from 'src/routes/root/public';
 import { BootstrapHeader } from 'src/components/bootstrap_header';
 import styles from './RootContainer.module.scss';
+import { PrivateRootRouter } from 'src/routes/root';
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history: History = createBrowserHistory();
@@ -16,9 +16,9 @@ const history: History = createBrowserHistory();
 Navigation.init(history);
 
 export class RootContainer extends React.Component {
-  componentDidMount() {
-    store.dispatch(checkUserAuth());
-  }
+  // componentDidMount() {
+  //   store.dispatch(checkUserAuth());
+  // }
 
   // RENDER
 
@@ -29,7 +29,8 @@ export class RootContainer extends React.Component {
           <React.Fragment>
             <BootstrapHeader />
             <div className={styles.container}>
-              <RootRouter />
+              <PublicRootRouter />
+              <PrivateRootRouter />
             </div>
           </React.Fragment>
         </BrowserRouter>
