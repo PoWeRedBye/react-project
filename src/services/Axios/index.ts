@@ -64,10 +64,10 @@ export const Axios: AxiosService = ((): AxiosService => {
   return {
     setAuthToken,
     unsetAuthToken,
-    GET,
-    POST,
-    PUT,
-    PATCH,
-    DELETE,
+    get: GET,
+    post: POST,
+    put: PUT,
+    patch: PATCH,
+    delete: DELETE,
   };
 })();

@@ -6,13 +6,13 @@ import * as Payload from './types';
 const urlPrefix = '/user';
 
 export const getUser = (): AxiosPromise => {
-  return Axios.GET(`${urlPrefix}/get`);
+  return Axios.get(`${urlPrefix}/get`);
 };
 
 export const login = (payload: Payload.Credentials): AxiosPromise => {
-  return Axios.POST(`${urlPrefix}/login`, payload);
+  return Axios.post(`${urlPrefix}/login`, payload);
 };
 
 export const register = (payload: Payload.UserCredentials): AxiosPromise => {
-  return Axios.POST(`${urlPrefix}/registration`, payload);
+  return Axios.post(`${urlPrefix}/registration`, payload);
 }

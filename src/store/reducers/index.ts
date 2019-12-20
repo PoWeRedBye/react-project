@@ -5,6 +5,7 @@ import { exampleReducer } from './example';
 import { apiRequestsReducer } from './api-requests';
 import { contractPrintersReducer } from './contract_printers';
 import { ACTIONS_TYPES as UserActionsTypes, userReducer } from './user';
+import {toasterReducer} from "./toaster";
 
 // Combine all application reducers to delegate them to
 // the root reducer that will be exported to the store
@@ -13,6 +14,7 @@ const appReducers: Reducer<AppState> = combineReducers({
   apiRequests: apiRequestsReducer,
   contractPrinters: contractPrintersReducer,
   user: userReducer,
+  toaster: toasterReducer,
 });
 
 export const reducers = (state: AppState | undefined, action: AnyAction): AppState => {

@@ -4,11 +4,11 @@ import { AnyObject } from 'src/types/common';
 interface AxiosServiceInterface {
   setAuthToken(token: string): void;
   unsetAuthToken(): void;
-  GET(endpoint: string, config?: Config): AxiosPromise;
-  POST(endpoint: string, params?: AnyObject, config?: Config): AxiosPromise;
-  PUT(endpoint: string, params?: AnyObject, config?: Config): AxiosPromise;
-  PATCH(endpoint: string, params?: AnyObject, config?: Config): AxiosPromise;
-  DELETE(endpoint: string, config?: Config): AxiosPromise;
+  get(endpoint: string, config?: Config): AxiosPromise;
+  post(endpoint: string, params?: AnyObject, config?: Config): AxiosPromise;
+  put(endpoint: string, params?: AnyObject, config?: Config): AxiosPromise;
+  patch(endpoint: string, params?: AnyObject, config?: Config): AxiosPromise;
+  delete(endpoint: string, config?: Config): AxiosPromise;
 }
 
 export type AxiosService = Readonly<AxiosServiceInterface>;

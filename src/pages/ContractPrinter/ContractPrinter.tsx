@@ -10,7 +10,6 @@ import { PrintersList } from './components/printers_list';
 import { PrinterInfo } from './components/printer_info';
 import { Props, State } from './types';
 import styles from './ContractPrinter.module.scss';
-import { Toast } from 'src/components/toast';
 
 export class ContractPrinter extends React.Component<Props, State> {
   state: State = {
@@ -87,7 +86,7 @@ export class ContractPrinter extends React.Component<Props, State> {
           printerId={selectedPrinter}
           onAddNewCounterToPrinter={this.addNewCounterToPrinter}
         />
-        <Toast open={this.state.toastIsOpen} message={this.state.toastMessage} handleClose={this.toastOnClose} />
+
       </div>
     );
   }

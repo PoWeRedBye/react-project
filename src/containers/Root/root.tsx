@@ -9,6 +9,7 @@ import { PublicRootRouter } from 'src/routes/root/public';
 import { BootstrapHeader } from 'src/components/bootstrap_header';
 import styles from './RootContainer.module.scss';
 import { PrivateRootRouter } from 'src/routes/root';
+import {Toast} from "src/components/toast";
 
 // Create a history of your choosing (we're using a browser history in this case)
 const history: History = createBrowserHistory();
@@ -32,6 +33,7 @@ export class RootContainer extends React.Component {
               <PublicRootRouter />
               <PrivateRootRouter />
             </div>
+            <Toast />
           </React.Fragment>
         </BrowserRouter>
       </Provider>

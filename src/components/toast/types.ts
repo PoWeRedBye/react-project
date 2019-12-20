@@ -1,5 +1,6 @@
+import { ToasterReducerState } from 'src/store/reducers/toaster';
+
 export interface Props {
-  open: boolean;
-  message: string;
-  handleClose(): void;
+  config: ToasterReducerState;
+  closeToaster(): void;
 }
